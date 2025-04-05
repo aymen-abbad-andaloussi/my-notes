@@ -1,0 +1,33 @@
+# Print a message
+echo "Salam al3alam"
+
+# Create a variable and assign a value to it
+my_variable="Welcome to programming!"
+
+# Print the value stored in the variable
+echo $my_variable
+
+# Prompt the user to enter a sentence and store it in a variable
+
+read -p "Enter a sentence : " user_sentence
+
+echo $user_sentence
+
+
+----------------------------------------------------------
+
+comit : save
+
+
+┌──────────────────────────────────┐
+│ Operator   Description           │
+├──────────────────────────────────┤
+│ -eq | ==   Equal                 │
+│ -ne | !=   Not Equal             │
+│   -ge      Greater Than or Equal │
+│   -gt      Greater Than          │
+│   -le      Less Than or Equal    │
+│   -lt      Less Than             │
+│    -n      string is not null    │
+│    -z      string is null        │
+└──────────────────────────────────┘

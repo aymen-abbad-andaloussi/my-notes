@@ -1,0 +1,628 @@
+link  dyal icone lfo9 ftitel:
+<link rel="icon" type="image/png" sizes="32x32" href="./public/images/favicon-32x32.png">
+
+link dyal font css ila knt mtelechargih:
+@font-face{
+	font-family: ktebAyHaja;
+	src: url('../dossier/smitLfont.ttf')
+}
+
+subsequent sibling : 
++ element li moorah
+~ element machi morah w binato chi haja n9der nwsel lih
+
+css :
+. class
+# id
+
+pudo element -->  :nth-child()
+
+++
+pour poser un fichier dans dossier en mettre ( / )
+pour revenir en mettre ( ../ )
+____________________________________________________
+
+assasiyat : !doctype , html , head , body 
+teht mn head 
+(meta) charset="utf-8"/) ay symbol ay horof ay haja dakhla f systeme utf-8
+
+(css)
+box-size : border-box : kikoun ghi f css bach maybedelch lhajm dyal element ila dert lih margin wla padding
+
+(p) paragraph
+(u) khet taht kelma
+(s) khet west kelma 
+(b) gras
+(strong) bhalha 
+(i) mayla 
+(em) bhalha
+(br) ki3ti ster bahl kine9ez ster
+(sup) kitele3 lkelma fo9 ster
+(sub) kinezel lkelma teht ster
+(hr) khet kbiiiir
+(mark) ki3elem markeurs
+[(ol type="ex A..") liste ordonnees-
+-(li) donne des numero en ordre]
+[(ul type="ex Square.circle") liste non ordonnees-
+-(li) donne des choses en ordre]
+(&copy;) copyright 2023
+&nbsp; pour fair espace
+
+ul li{
+    list-style: none;    bach nheyed decoration la liste 
+}
+
+
+((regle))
+_________
+on peux pas fais (ol) et apres (ul) 
+on fait seulment (ol) et apres (li) dans (ul)
+EX:
+(ol)
+(li) chap 1
+(ul type="ex...")
+(li)sous chapitre(li)
+(/ol)
+(a) link
+(a href="https://www.google.com")
+onclick="alert('hello')" : ki aficher liya message mora clique 
+target="_blank" link kithol f sefha jida 
+(_self) kiholo f nefs sefha kikon aslan
+tittle="" pour modifier la colone que je cliqie
+(a href="mailto:") pour envoyer 
+         num ) 
+______________________________________________________
+
+input:
+------
+
+(form) formulaire input et label.
+(input) :khana dyal ketba
+	:type="button" .value="" 9ima ya3ni ay haja ktebtiha ketban 3la button 
+       	     ="submit" kikon wajed but to enter
+	     ="reset" hta howa but to restart
+(button) botona (type)="submit" ktkteb click here ketle3 click here machi submite 
+ou (input) ila ktebti submite ketle3 lik submite
+
+(form): -action="https://maw9i3 d lback end"
+	-method="POST"
+
+(placeholder) ketba west input trensparent
+(required) darori manketeb dik lahaja f input 
+(disabled) makikhelinich nkteb
+(name="elements") ketkoun ghi f radio pour selectioner 1 elements 
+
+(label for="nom") Nom: (/label)          ila ciquit 3la labeel kidini l input!!!
+(input type="text" id="nom"/)
+
+(label for="emailAdress") Email (/label)
+(input type="email" id="emailAdress")
+
+(input) type="radio" bach tkon hdaha da2ira kocher (value) bach ykoun 3endha ma3na f systeme (name="a" bach tkhtar haja wehda machi 2 
+(input) type="checkbox") moraba3 kocher vrais ex: are u shure?
+(textarea) khana l ketba bezzaf
+resize: none : dyal texte area bach matkeberch lkadre
+cols="50": toul dyalo
+rows="10": l3ard dyalo
+
+
+code de type="":
+----------------
+hadchi kaml kidar f :
+(input type="...")
+--------------------
+
+texte
+email
+password
+range                khet ketherrek bel volume 
+number               ketzid ar9am b sahm 
+date time_local      
+time
+color                
+date
+checkbox		           crocher
+radio + name="elements"	     cocher ms on selectioner 1 elemen 
+ftile + accept"image/*"		pour ajouter un fichier /* si je ne sais pas quelle type de fichier 
+month
+search
+tel
+week
+url
+(submite)
+(reset) ==>butom
+(buttom)
+
+_______________________________________________________
+
+row : vertical
+cols : horisontal
+_______________________________________________________
+
+(font) kithekem blketba + color ="ay lon" + size="hajm lkhat" mn 1 L 7
+(align) ketji mn hda (body) baach n9ad lketba / knkteb (center) wla (left) wla (right) (p)
+(dir) keji hda (body) hda (align) (rtl) right to left / (ltr) left to right ; bach nkteb arrab english 
+(h1 style="font-size: 00PX") ketba... (/h1)
+
+ex: <body align="right" dir="rtl"> 
+<p>ايمن aymen <p>
+
+_________________________________________________________
+
+table:
+------
+
+(table) bach dir jadwal (border) bach tseter
+(tr) (th) (td)
+(tr) ki3ti ster horizontal ketji mora (thead) 
+(th) ki3ti ster vertical kiji mora (tr) ketkoun ghi f (thead)
+(td) ki3ti ster vertical kiji mora (tr) ketkoun ghi f (tbody)
+(colspan) damj sofof
+(rowspan) damj l3awamid
+(thead);(tbody);(tfoot) ras ou ljism ou rejlin tableau 
+(bgcolor) lewen tableau
+_____________________________________________________________
+(img) ;tsawr (src) ila 3endi tswira f burau wla link 
+             (alt) bach nkeb chi haja ila makhedmatch tswira
+		=> onerror="this.src='./public/images/logo.svg' : bach ila makhedmatch tswira ki3ewedha bhad lien lghandir hna.
+
+object-fit: cover: bach ila tewel tswira ga3ma ketjebed ketb9a f hajm zwin 
+(width="00")   (height="00")
+(video) src="" width="" controls , poster="" , autoplay , loop , muted
+	..ex---------------ex..
+<video controls,autoplay,muted width="400" height="400">
+     <source src="vid.mp4">
+</video>
+
+(audio) src="" controls sawt video 
+(details) 
+(summary) bhal aficher plus mni kncliquer ki3tini plus info
+(embed) src="" bach thot ay ficher 
+(iframe) src="" kibeyen sefha f lpage li derta fiha ila kan chi maw9i3 khassni samah
+(prgress) khet dyal telechargement
+
+color: (a) dyal tresnpatent ; rgba ( 28 , 194 , 116 , 0.3 )
+
+(card shadow) dell
+(style="overflow: hidden;") ketakhod lhajm dyal lhawest kolha
+(border radius): l9nat wach mdewrin.
+
+
+width:fit-content : kiched liya toul dyal content li west div
+
+______________________________________________________________
+CSS
+______________________________________________________________
+
+identificateurs:
+----------------
+
+id (#) kendiro mera wehda b nefs smiya
+class (.) n9der n3awedha
+
+
+dir: RTL , LTR
+text align : ( left , right , center , justify ).
+text decoration : ( none , underline , overline , underline overline , line-through ).
+text transform : ( none , capitalize , uppercase , lowercase ).
+text ident : 00 px ghir f awal jomla wla ster grand espace.
+text shadow : lkhyal d lketba : 0px (vertical), 0px (horiszontal), 0px (efet).
+line height : interline de paragraphe , espace mabine les ligne.
+letter spacing : espace mabin kol harf b 0px.
+word spacing : espace pabine kol kelma 0px.
+
+ ______________________________________
+( none: walo                           )
+( underline: khet mn lteht             )
+( overline: khet mn lfo9               )
+( anderline overline : lfo9 ou lteht   )text decoration
+( line-trough: khet west lkelma        )
+(______________________________________)
+(solide,dashed,double,wavy,dohed)      )
+(______________________________________)____
+( none: walo                                )
+( capitalize: chaque premier mot majuscule  )
+( uppercase: tout le texte majuscule        )texte transform
+( lowercase: tout le texte minuscule        )
+(___________________________________________)
+
+font-weight : lghold dyal lketba.
+font-style : chkel dlketba bhal italic,oblique.
+fonnt-size : lhajm dlkhetba.
+font-family : chkel d lkhet.
+@import url(https://fonts.
+(font-family):"oswald", sans-serif ;
+border-radios:0px : kiheyed l9nat.
+cursor: pointer : dak sbe3 fach ketbghi tcliquer.
+
+border-collaps:collaps; kedar Ghir f tableau khet dayer 3la tableau kaml.
+tex-align:center; ketba lwest =>(mn limen lisser)<=.
+vertical-align:center; ketba lwest =>(mn fo9 teht)<=.
+
+p:: ket3ni
+
+
+_____________________________________________________________
+*{ } tout les balise de ecretiture va changer
+
+(margin) : espace mabin lcared dyal la page et le border
+border : lkhet wla lkadre ex: border: 1px solid,dashed,dotted color .
+padding : espace mabin contenu et bordure kibda mn lfo9 limen lteht lisser.
+padding-inline : espace Ghir f limen w lisser . 
+contenu : howa li kikon lwest .
+
+4 tijahat: left , right , top , bottom.
+
+
+les balise block bhal(p) bohedha ki3ti lespace lfo9 ou lteht 16px par defaut
+lbody automatic ki3ti 8 mn kol jwayh
+
+input { width:0px , height0px , padding 0px.
+background-image: url("wave.svg");
+background-repeat: no-repeat;
+background-size: cover : ketakhod image hajm dyal div
+background-size: contain : kiyakhod lhajm dyal image m9aada wmakibedelch lhajmdyalha
+
+background-attachment : fixed : background image kib9a fix wakha knscroli makitherekch
+background-attachment : local : mni knscroli element ketherek m3ah image ;ex: div west mnha p fiha lorem500 mni knscroli kethbet lketba wketheb m3aha image
+background-attachment : scroll : ila kan div wfiha scroll w fiha p ghatkoun local w fixed ila scrolit content ghatmchi m3aha image ila scrolit body ghatkoun fix
+
+outline
+
+height: calc(100/3);
+
+mask: linear-gradient(transparent,#000000); bach dir tswira fiha degrader trensparent mn fo9
+mask: linear-gradient(#000000,transparent); bach dir tswira fiha degrader trensparent mn lteht
+_____________________________________________________________
+
+
+display: inline , block , inline-block , none.
+inline: kiyakhod masafa liket9edo w ila dert kolchi inline kijme3 kolchi fster ou maymkench liya nthekem b tol
+block : kiyakhod block wla ster bohdo w kisetef l3anasir teht wahed ms ymken liya nthekem b toul 
+inline-boxe : ymken li nthekkem bach ma bghit 
+none : ketkhebi element bhala kimesho 
+hidden : kikhebi element ms ketb9a blasto	
+display : unset  ;   kireje3 ay element default kima kan felewel bhal space between w position absolute
+
+
+
+Balises inline
+--------------
+<em>
+<strong>
+<mark>
+<a>
+<img />
+label
+input
+
+Balises block
+-------------
+<p>
+<footer>
+<h1>
+<h2>    
+<article>
+</body>
+
+boxshadow: 6px 6px 6px.
+
+(float): 
+(clear) : both
+
+
+____________________________________________________________
+
+position:
+--------
+
+static : ketkoun deja par defaut bla manktebha.
+
+relative : ghir ila bghit nherek element bhala knrej3o yadawi.
+absolide : ila bghit nhot chi haja fo9 mn haja .
+fixed : fixe ne bouje pas .
+sticky : 
+
+top
+left
+right         les cotée de direction
+bottom
+Z-index ketbda b 1 ila bghit nhot element kiban fo9 wakha nhebet chacha
+
+ila bghit ndir ketba fo9 element khassni ndir 
+sghir: relative bach nherkko
+lkbir: absolute
+
+hit absolute makit3amelch m3a static mni ndir absolute khassni nhewel element li kan static l absolute.
+hit ila l9a dik lhaja static ghaymchi li fo9 mnha bach y9eleb 3la absolute ila mal9ach automatic ghaytle3 l body.
+ou hta z-index makit3amelch m3a static ila kanet chi haja hdah static maghatkhdemch khassni ndirha relative.
+
+bhal google icone absolide 
+input reletive
+
+il faut mettre les 4 position avec les cotée pour deplacer un element 
+
++ ket3ni aprée le div 
+(div)
+(/div)
+(p)
+
+div + p : knstehdef element li morah
+
+> element li dakhel fi west mno
+(div)
+(p)
+(div)
+
+div>p  p li dakhla f div
+
+________________________________________________________
+transition:
+-----------
+
+_______________________________________________________________
+
+.test{
+    transition-duration: 1s;		chhal dyal we9t bach ghadouz animation
+    transition-delay: 2s;		chhal ghantsena
+    transition-property: all;		3lamn ghatebe9
+
+.test:hover{				mni nhot la souri dar animation
+    width: 80%;
+    height: 50vh;
+
+
+button:
+
+transform:rotate :kedor
+transform:scale :ketkber (1.1)
+
+transition: transform 1s; 
+degrader ay haja color wla transform
+
+_________________________
+l   trasform : (1.1)      l
+l   rotate : (1deg)       l      kithekmo bl animation:
+l   transition : all 1s   l
+l   translateX :(0px)     l
+___________________________
+
+
+@keyframes identifier { 
+0% { transform: translate  Y/X  (00px)
+}
+
+-------------------------------------------
+
+
+
+
+
+________________________________________________________
+
+display:flex
+------------
+
+kiseter element horizontal comme (display inline)
+
+justify-content: 
+
+space-betwen : espace kbiir wghi binathom.
+space-around : nefs espace li fjenb ki3tiha lkol element.
+space-evenly : nefs espace mtsaawi
+
+flex-wrap: wrap; makikhelich les elements ytge3sso mni knzid bezzaf kinezelhom lster ,
+		, wla mni ketsegher chacha kinezlo lteht mzyana f responsibility.
+
+gap : 0px : ki3ti espace lwest ou lteht d les dives .
+colums-gap : espace f colum 
+row-gap : espace f row	
+
+flex-direction:column; kithekem b ay haja keji mn mora display flex ms ila bghit dik lhaja tkoun machi flex kndir flex direction column ->
+				hit ila bghit nthekem bchi haja khassni ndir display-flex >> jusify..center >> align-item >> kseter liya ayhaja lwest.
+		  :row-reverse; ki9leb element lewel kiwel lekher w lekher kiweli lewel.
+
+aligne-item: bach nhotles elements lwest.
+		: flex end ; bach nhebet element lteht.
+
+order:3 : bach nchanger element mn lwest ltalet 
+		bach nzid 1 ou nrje3 b -1.
+
+___________________________________________________________________________________
+
+@media (max-width:600px): mn 0 L 600 ghaytebe9 liya had style
+@media (min-width:800px): mn 800 lfo9 ghaytebe9 liya had style
+
+
+___________________________________________________________________________________
+
+grid:
+----
+
+grrid howa kicreer liya bhal tableau f site bach n9der nsetef ay element bghit bhal f bootstrap kikoun fih colums md 12 y3ni 12 colum ou dima kikoun fih colum w row .
+ex : 
+display: grid; bach n activer grid
+grid-template-columns; ki creer liya grid f colums , 
+grid-template-columns; ki creer liya grid f row ex :
+			; auto auto auto auto : ghay9sem liya 3la 4 colums mtsawin hit auto
+			; 100px 100px 100px 100px : bhalo
+			; repeat(4, 200px); nember lewel ghay3awedha 4 dlmerat , number tani toul dyalo.
+
+sanseurs;
+---------
+
+::-webkit-scrollbar{
+	width:10px;
+	background-color:red;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color:yellow;
+	border-radius:8px;
+}
+
+
+___________________________________________________________________________________________________________________________________________________
+
+pt
+pb
+ps
+pe
+px
+py
+
+pt-> padding top
+pb-> padding bottom
+ps-> padding start
+pe-> padding end
+px-> padding left and right
+py-> padding top and bottom
+
+mt
+mb
+ms
+me
+mx
+my
+
+mt-> marging top
+mb-> margin bottom
+ps-> marging start
+me-> margin end
+mx-> margin left and right
+my-> margin top and bottom
+
+margin et paddin 
+kibdaw mn 1 -> 5 + auto
+
+fs-> font size 
+kibdaw mn 1 -> 6 +auto
+
+fw-> font weidth
+
+
+.container : ki3ti espace fjnab kiyakod 90% mn ecran
+.container-fluid : kiyakhod 100% mn ecran sans espace
+
+.row : pour créer une line.
+
+
+rounded : border radius
+
+
+--------------------------------------------------------------------------------------------
+
+margin auto
+
+align="center"
+margin 0px
+padding 0px
+position: absolute
+top%
+left%
+
+body
+display:flex
+height:100vh
+justify-content: center
+align-items: center
+background
+
+a:visited : lien li kenchouf
+a:hover : lien li knhot 3ih souris
+a:active : mni ncliquer ketlewen
+
+_______________________________________________________________
+
+pseuso-class:
+_____________
+
+:first-child : kimchi lchild dyal chi element ou ketzid thedded bhal ( :first-chilsd p ;) ya3ni ila kano bezzaf kiheded lweld li hededto 
+:nth-child(2) : t9riban kichbeh lih ms ketheded bih li bghity b ar9am , ou pour selectioner les element.
+
+:last-child : mab9atch khedama
+:last-of-type : kikhtar akhir haja
+:not(:last-of-type): dir liya koulchi ila lekher
+--------------------------------------------------
+
+element, classname:pseudo-class
+            css style
+-------------------------------
+
+:hover{
+    color: red;
+----------------------->	mni nhot lasouri 3la chi element ytbedel chkel
+
+a:visited{
+    color: black;
+----------------------->	mni kn cliquer 3la chi link kib9a mlewen
+
+:focus{
+    border-color: red;
+    padding: 10px;
+    outline: none;
+----------------------->	ghir mni kn cliquer 3la l input ketkhdem liya bhal mni kn cliquer 3la input ketweli border mlewen
+				ms darori khass dir outline none hit kiji par defaut
+
+:active{
+    background-color: brown;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+----------------------->	mni kn cliquer ketlewen liya lbutton w mni kntle9 ketrje3
+
+:checked + label {
+    display: none;
+----------------------->	mni kn cliquer 3la check ketkhtafi ketba wla ketbedel
+
+:empty{
+    border: 3px solid gray;
+----------------------->	kimchi l ay element emty wkithekem fih tlewno wla ay haja 
+
+.firstDiv p::before{
+    content: '';
+    width: 10px;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: -10px;
+----------------------->	f3iwad mandir span wla div ou 3ad nlewenha kndir before wla after automatique ki ji lase9 f element li bghit
+
+
+::-webkit-scrollbar{		}
+    width: 50px;		}	background
+    background-color: gray;	}
+----------------------->	}
+				}	sinseur kitkewen mn jouj hajat : background w bare twila : 
+::-webkit-scrollbar-thumb{	}	
+    background-color: red;	}	bare
+    width: 10px;		}
+----------------------->	}
+
+parnt position relative;
+child position absolute;
+
+
+_______________________________________________________________
+
+
+position:absolute bach ay haja tekhcha fo9 menha
+
+lkbir relative
+sghir li west lkbir absolute
+
+section
+
+favicon: tswira li fo9 site.
+
+
+great vibes / khet zwine
+
+
+selecteur
+proprieter
+valeurs
+
+
+_________________________________________________________________________________________________________________________

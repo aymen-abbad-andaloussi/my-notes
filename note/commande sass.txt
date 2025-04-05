@@ -1,0 +1,89 @@
+commande sass
+_____________
+
+to write file sass
+1). .sass : kenketbo fih bhal f javascript bla a9wass {} .
+2). .scss : kenketbo fih bhal f css b a9wass {} wsahel .
+
+3). _ smiya dyal file : ket3ni bghit ghir had lfile nstad3ih fl mainSass ;
+:) wmni makndirch _ ila ktebt haja fdak lfile bhala ktebtha f main akhor wkikon ghir main 1 ou deja watch sass m3a css ;
+:) y3ni bhal 3endi bezzaf d les section ou main.sass kndir @import(use) dyal _section f main .
+
+4). darori nkteb f terminal bash => sass --watch mn sass l css : ket3ni ychouf dekchi li ktebt f sass w yhoto f css auto ou kizid liya file dyal sass map automatic.
+
+_____________________________________________________
+
+-----> main.scss <-----
+@use "./folder/folder/file" ;  : baach n importi lfile dyal section dyal scss.
+=> @use "./folder/folder/file" as * ; ila dert chi file dyal chi variable ex : $colors:green khassni nzid :( as * ) bach importi liya ga3 dakchi li 3erefthom .
+wla knkteb 9bel mn $ smit lfile. ex: color.$colors .
+
+------> kn3erefha kharej class <--------
+$smiya : chihaja f css => ex[ $alt_color : green ] : ghaykteb liya f css color green .
+
+--------> kn3erefha dakhel class <---------
+=> mni kndir $smiya : black => knbedelha mo2a9ata ghi fdak lclass fin khedam.
+
+!!! => ila zedt !global hda $smiya li fwest lclass bhala getlih dirha tkoun hiya assasiya .
+
+$smiya : green : deja kayn f css.
+$smiya : " kteb ay texte " : kihot content kima ktebto.
+
+*------khtisar (nesting & parent element)------*
+.parent {}
+.parent .childe {}
+=========
+.parent {
+color:green;
+  .childe {
+   color:red;
+ }
+}
+
+>: bhal espace y3ni childe li wst parent
++: parent awal element morah diro
+&:ila bghit nssemi b jouj dl class .class1.class2
+
+.parent {
+color:green;
+  > .childe {
+     color:red;
+ }
+}
+.parent > .childe{}
+
+.parent {
+color:green;
+  + .childe {
+     color:red;
+ }
+}
+.parent + .childe{}
+
+.childes {
+color:green;
+  &.childe {
+   color:red;
+ }
+}
+.childes.childe{}
+============>
+& bhala ket3ewed liya lclass lprent li knkteb west mno ex: &:hover,:active,::before etc… => .parent:hover,:active
+
+.childe{
+    &:hover{}
+    &:active{}
+    :not(&){}
+}
+
+:not(.childe){}
+
+-------------
+
+@extend .class ;   : ket3ni mni nkteb wla n3eref chi class ou n3tih khassa2is dyalo bhal color w bg w display bla manb9a n3awedhom kola mera ;
+			n9der wnkteb .parent { @extent .class ; color : green}.
+
+%: ket3ni place holder f css ila bghit nakhod les info mn chi class wmatbanch knir liha porsontage ( %class{color:red} ) <== hadi maghaybanch f css ms ymken nakhod color .
+
+___________________________________________________________________
+

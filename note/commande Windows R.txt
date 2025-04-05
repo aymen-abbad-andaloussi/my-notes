@@ -1,0 +1,43 @@
+commande Windows R
+_____________________________________
+
+shutdown.exe -s -t 00 
+-bach tfi pc 
+Chihaja.bat
+-nreje3 fichier système 
+
+(win+R)
+
+shutdown /s /t 60
+-ghaytfa pc mn be3d 1min 
+
+Mrt 
+-for delet verus
+
+Cleanmgr
+-mseh fichier li zaydin
+
+Prefetch
+-mseh fichier li zaydin f disque C
+
+Temp
+-bhalha
+
+%temp%
+-bhalha ms aceuil
+
+compmgmt.msc
+-trigel chi haja bhal speed wifi
+
+Regedit
+-to edit any file transparent cant deleted 
+
+Winver
+-version windows
+
+Powershell
+-to active windows or microsoft
+( irm https://get.activated.win | iex )
+
+Msconfig
+-to edit prossesor

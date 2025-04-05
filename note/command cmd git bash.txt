@@ -1,0 +1,49 @@
+PWD : bach n3erfo rassna fin kaynin
+CD (dossier): kndkhol l dossier
+MKDIR (dossier): bach ncreer folder
+LS : bach ywerini dak dossier chno fih
+TOUCH (file): bach ncreer file
+CD .. : bach nrje3
+CD ../.. : bach nrje3 jouj dlmerat
+CLEAR : bach nmsseh terminal
+CODE (dossier): bach nhol dossier f vs code
+MV (dossier): bach deplacer 
+RM -RF (dossier): bach nmseh dosssier
+RM -R : kimsseh
+rmdir : kimsseh
+
+
+git init : bach n ajouter git
+
+git config --global user.name "aymen abbad andaloussi"
+git config --global user.email "aymenandaloussi69@gmail.com"
+
+git add . : bach naouti ga3 lfichiers bach yt3erref 
+git commit -m "ay haja 3endha 3ala9a bel code " : bach ykoun jahez ytlah
+git push : to pub
+git pull : bach nakhod changes
+
+git clone : bach tdekhel dossier mn github
+
+git branch : bach najouter whad lbranch bhal lwasakh
+git switch (smiya branch) : bach nthewel mn main l dak lbranch
+git merge (smit branche) : bach nmerger branch mn dyali l main
+git checkout -b : bach tcreer branch ou dkhol lih fnefs lwe9t
+git branch -m (smiya dyal branch): bach modifier smiya dbranch
+git branch -d :kimseh ila kan ma modifierch
+git branch -D : ki msseh beezzeezz wakha modifer
+git stash list : bach ywerini stash ach fiha
+git stash save "chi haja": bach ykhebi f stash w dirha b message
+git stash :bach nsifto mo2a9at fwhad lblassa
+git stash pop : bach nreje3 mn stash ou kimseeh dik stash li sifet
+git stash Apply : kijib mn stash w kikhelli stash makimeshouch
+git stash pop stash@{1}: bach nreje3 ay stash bghit bel id dyalo
+git stash drop : kimsseh akhir haja dertha f stash
+git restore --staged . : bach nreje3 dakchi li dert lih git add .
+git clean -n : knjehzou bach ytmesho 
+git clean -f : kimesshou
+git log : bach ywerini commits ou idiyat dyalhom
+git reset --hard 01234567890 : kinta9el ldak lcommit w kidiro howa head ou dakchi li fo9 mno kiheydo ila dert git push --force
+git push --force : bach yforci pushi dakchi sehha w ytmessho liya les commits ila maderthach maghaytmeshouch
+
+git switch aymen ou 3ad dert merge lmain bach njib main l 3endi

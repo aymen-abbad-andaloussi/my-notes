@@ -1,0 +1,430 @@
+front end howa dekchi li knchouf
+baack end howadekchi li kikon mn lor maknchofoch 
+windows + ; : emoji
+____________________________________________________
+ 
+intro sur le web HTML
+
+créer le 1991
+
+HTML
+Boost trap/tai/uind
+ALGO
+JS
+React JS
+Bases sur les API avec Express JS
+
+web # internet
+il permet prtocole ex: php ; ftp ; smtp ; imap ; pop ...
+code de serveur / erur : 404
+la langue de pc : binaire
+(0,1)
+
+live serveur
+material 
+auto
+add jscod comment
+ES7+ React/Redux/React-Native snippets
+___________________________________
+
+2 type : 
+doubles : <balise>_________</balise>
+orphelines : <balise/>
+
+il ya deux type de lien :
+un lien externe : il faux pose (HTTP) khariji
+un lien externe : ses de moi qui le créer
+	
+la forme d'image : JPEG
+                   SVG
+
+GITHUB
+BITBICKER 			se sont de cloud de stockage de projet
+
+
+live
+auto rename tag 
+auto close tag
+prettier
+GitHub copilot
+
+__________________________________________________________________________________________________________________________________
+
+
+intro au CSS
+____________
+
+créer le 1995
+
+ou kibda f <font>______________
+
+selecteur
+propriéte
+valeur
+
+________________________________________________________________________
+
+node js
+
+react natice
+ionic 
+native script
+
+
+npm
+
+variable il stoque seulment une donnée
+______________________________________
+
+les types primitifs
+-number
+-string
+-boolean
+
+Number : bach dir ghir les nombres simple bhal 123456789
+parseInt : les nombres en vergule
+
++ plus : za2id
+- moins : na9is
+/ division : 9isma
+* multiplier : darb
+
+
+> superieur
+< inferieur
+
+
+_______________________________________________________________________________
+lecons de jour
+--------------
+-quz
+-les conditions 
+-les boucles 
+-les tableaux
+-fontions sur tableau
+-les fonctions 
+tp
+,,,,,,,,,,,,,,,,,,,,,,
+
+let num1=3
+num1=num1+2
+=>num+=2
+
+=>num1++
+incrementation
+=>num1--
+decrementation
+pos a++ ajoute 1 a la ligne apree 
+pre ++a ajoute 1 sur place
+
+
+la regle
+--------
+et&&
+----
+1 et 1 = 1
+1 et 0 = 0 
+0 et 1 = 0
+0 et 0 = 0
+
+
+ou||
+----
+1 ou 1 = 1
+1 ou 0 = 1 
+0 OU 1 = 1
+0 OU 0 = 0
+
+________________________________________________________________________________________
+
+let : smit valeurs f blast val
+console.log("......"); : bach nbeyen ay haja 
+if : si
+else : ila majatch nefs resultat else ketkteb message li ghaytle3 ila makanetch dik resultat
+
+texte.charAt(1) : viser 3la lharf li bra9m bhal 0,1,2,3 ki viser 3la lharf ra9m 1
+leght : chhal mn harf aw chhal mn kelma f element
+push : ajouter automatic au derniere
+pop : suprimer la derniere element 
+shift : delet premiere element
+unshift : ajoute premiere element 
+solice : kimseh
+concat : kijme3 les tableau bjouj
+
+prompt : bhal input
+alert : mraba3 li kitle3
+
+ages.concat(names)
+
+join : kijme3 tableau ou kiheyed lih [ ] 
+
+ages.join ('' / '') = '' 18/13/24''
+
+includes : ages(13)
+
+kichouf wach kayna kigol true or false
+
+
+for (let i = 0 ; i < names.lengh ; i++)
+{
+     console.log(names[i]
+}
+
+map : boucle bhal for
+names.map (
+callback
+----( (--- ) => {
+} )
+
+names.map ( (element,i)=>{
+console.log(element);
+} )
+
+let newTab = names.filter ( ( item ) => {
+return item.length == 4; 
+} )s
+console.log(newTab);
+
+compte + = 100 + (n*2)
+
+for (let i = 1 ; i <= n
+{
+compte+=100 + (n*2)
+}
+
+let pHT = Number 
+
+document.getElementById("smit id h3").innertHTML = "smit var reslultat"
+bach nbeyen code js f html.
+
+typeof : bach y3ref ina naw3 var wach string wla number
+
+.toUpperCase( ) : koulchi majuscule
+.toLowerCase( ) : koulchi minuscule 
+
+.replace (" ay haja , ay haja ") kiremplacer ay haja b ay haja
+
+addEventListener ('click'()=>{
+})
+ila clickit 3la lhaja ketban 
+console.loge(var.value) 
+
+_________________________________________________________________________________
+le jours:
+--------
+
+-les objets 
+-ES6
+-objet
+
+_________________________________________________________________________________
+
+storage:
+--------
+knchoufha ghir mn aplication:
+
+
+sessionStorage. : stocker seulement une foi ou ila sedit ketemseh
+localStorage. : stocker toujours hta nmsehha
+
+localStorage.setItem("age",34) : bach nhot ay haja f stockage
+sessionStorage.setItem("age",34) : bhalha
+	      .getItem(  ) : bach nchercher 3la element mn storage
+	      .removeItem : bach nmseh
+	      .clear : bach nmseh koulchi
+
+___________________________________________________________________________
+
+le jours:
+---------
+librairies js 
+lodash
+jquery
+anime js
+typed js
+asynchrone&
+synchrone
+promises
+fetch api
+___________________________________________________________________________
+
+le jours
+--------
+
+-Asynchrone et synchrone
+-Les promesses
+-API
+-Fetch
+-TP1
+-TP2
+___________________________________________________________________________
+
+Asynchrone : ki9ra code kolchi fmerra 
+synchrone : par defaut ki9ra mn ster lewel 
+promesses : knwa3ed bchi haja whiya ba9i ma3endekch
+		ex: an3tik 5dh wach 3endek 5dh ? nn 
+API : bhal serbay
+fetch : fonction ketjme3 bin Asynchrone et promesses
+
+.then : si oui
+.catch : si non error
+
+texte
+blob : image
+html
+json : javascript
+
+data.map : hiya li ketsekher tjib api mn site
+
+__________________________________________________________________________
+le jours:
+---------
+les modules 
+js avancé
+poo
+
+type"module"
+export default
+import var from "/ or ./ or ../ function.js"
+
+app:import
+function:export
+
+constructor
+class
+let p1 = new personne( )
+	=> constructor
+
+__________________________________________________________________________
+
+le jour:
+--------
+
+- react js
+- notions de composants
+- function & class
+- jsx et babel
+- create react app
+- tp
+- props
+- state
+node js
+npm
+no package manager
+ms plus lent
+yarn
+
+
+___________________________________________________________________________
+
+il ya deux componnent :
+function
+class
+on peux faire les deux :
+
+<script src="app.js" type"text/jsx"></script>
+<script src="app.js" type"text/babel"></script>
+metaverse
+nft
+
+React.Fragment : comme dive ms il est vide
+React.Component : dans class
+
+to creat react app i'll need have node >= 14.00 and npm>= 5.6
+npx create-react-app premier-formation
+to install in cmd
+SPA : sigel page ; la meme page
+PWA : trensfaire le site a application
+SEO : 
+
+ex:
+---
+class Header extends React.Component {
+    render() {
+      console.log(this.props);
+    return <h2>Hello World i have {this.props.age} yo </h2>;
+  }
+}
+
+class HomePage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            name:"Aymen"
+        }
+    }
+
+    render() {
+    return<React.Fragment>
+        <div>Wassap Guys</div>
+        <h4>{this.state.name}</h4>
+        <Header age="22" />
+      </React.Fragment>
+  }
+}
+
+ReactDOM.render(<HomePage/>, app)
+
+__________________________________________________________________
+
+import React from "react"
+
+class App extends React.Component{
+  render() {
+    return <>
+      <h1>Hello World</h1>
+      <h3>My Nam's AYMEN</h3>
+    </>
+  }
+}
+
+export default App
+__________________________________________________________________
+
+le jours:
+---------
+compsants
+JSX
+props & children
+state
+statefull & stateless
+events
+cycle de vie 
+react
+
+render aficher jsx
+module
+ComponentDidMount()
+ComponentDidUpdate()
+ComponentDidUnmount()
+__________________________________________________________________
+
+comment creer mporter exporter composant
+partager les props 
+
+statefull : il ya de state
+stateless : n'a pas de state 
+
+___________________________________________________________________
+
+le jours:
+---------
+
+- todo app
+- useRef
+- useContext
+- design
+- firebase
+- vercel
+
+____________________________________________________________________
+
+CREATE USER aymen@localhost identified by "aymen";
+GRANT ALL on *.* TO aymen@localhost with grant option;
+
+in MySQL to change user and password
+
+____________________________________________________________________
+
+bach nhol chi site dyali mn XAMPP :
+knhewel dissier L C:\xampp\htdocs\projet

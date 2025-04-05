@@ -1,0 +1,1 @@
+sudo loadkeys us / fr : to chage clavier

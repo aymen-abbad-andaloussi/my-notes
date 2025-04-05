@@ -1,0 +1,43 @@
+Documentation : bach n3ref les code dyal ay haja
+
+python
+-------
+explique
+-----
+
+entiers:homa ar9am 3adiya 
+les flottantts: ar9am li fihom,lfasila wla na9iss
+les booléens : true or false
+
+if elif else
+while
+for i in range
+
+---------------------------------------------------------
+mostalahat
+----------
+
+print: kibeyen ay haja f texte
+'\n':new line espace kbiire 
+\t: new tab espace kbiir
+str(...) : kihewel mn ra9m l caractere
+int(...) : kihewel mn caractere l ra9m
+float(...) : kethewel mn 3adad entier l flottantts fih lfasila
+eval(...) : mni maknkounch 3aref chnahiya lhaja 
+bool(...) : true or false
+
+liste= []
+tuple= ()
+dictionnaire= {"cle" : valeur ,}
+
+len(...) : l9ima dyal lhaja bach yhsseb chhal mn harf fel kelma
+.upper : change to majuscule
+.lower : change to miniscule
+format : kihewel mn ra9m l caractere
+.replace(".." , "..") : kihewel ay harf l akhor 
+
+if num < num2: : wach / ila kan ...
+      print(...)
+else:          : ila makanch shih kteb liya hadchi
+      print(...)
+in / and / or
