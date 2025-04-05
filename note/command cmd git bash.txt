@@ -30,8 +30,8 @@ git switch (smiya branch) : bach nthewel mn main l dak lbranch
 git merge (smit branche) : bach nmerger branch mn dyali l main
 git checkout -b : bach tcreer branch ou dkhol lih fnefs lwe9t
 git branch -m (smiya dyal branch): bach modifier smiya dbranch
-git branch -d :kimseh ila kan ma modifierch
-git branch -D : ki msseh beezzeezz wakha modifer
+git branch -d aymen :kimseh ila kan ma modifierch
+git branch -D aymen : ki msseh beezzeezz wakha modifer
 git stash list : bach ywerini stash ach fiha
 git stash save "chi haja": bach ykhebi f stash w dirha b message
 git stash :bach nsifto mo2a9at fwhad lblassa
@@ -43,7 +43,19 @@ git restore --staged . : bach nreje3 dakchi li dert lih git add .
 git clean -n : knjehzou bach ytmesho 
 git clean -f : kimesshou
 git log : bach ywerini commits ou idiyat dyalhom
-git reset --hard 01234567890 : kinta9el ldak lcommit w kidiro howa head ou dakchi li fo9 mno kiheydo ila dert git push --force
+git reset --hard 01234567890 : kinta9el ldak lcommit w kidiro howa head ou dakchi li fo9 mno kiheydo ila dert git push --force (( ms hadi kihewel head w master ))
 git push --force : bach yforci pushi dakchi sehha w ytmessho liya les commits ila maderthach maghaytmeshouch
+git checkout 01234567890 : bach nrje3 l ay commit bghit bel id ila déjà knt leht chi commit (( kithewel lhead ldak lcommit w maser kib9a fin knt ))
+git checkout main : bach nrje3 l akhit commit leht hit b9a lmaster f akhir commit 
+!< fach ghatnfe3ni !!! ila bghit nrje3 lchi commit 9bel nakhod mno chi code wnrje3 lekher nhotto fih >!
+
+<> .gitignore <>
+!< fach kinfe3 ila bghit ntjahel chi file wmanb9aach kola mera nloho >!
+git rm --cached : bach nreje3 chi file untracked hit ki 9bel ghi lfiles untracked
+
+.gitignore : knktebha f new file 
+knkteb west mno lfile li bghit ytjahlo index.html
+*.html : kitjahel ga3 lfiles li kisaliw b .html
+
 
 git switch aymen ou 3ad dert merge lmain bach njib main l 3endi
