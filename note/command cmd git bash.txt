@@ -59,3 +59,8 @@ knkteb west mno lfile li bghit ytjahlo index.html
 
 
 git switch aymen ou 3ad dert merge lmain bach njib main l 3endi
+
+npm i bootstrap@5.3.5 : to install bootstrap
+npm i bootstrap-icons :	to install bootstrap-icons
+npm uninstall bootstrap : to uninstall bootstrap		
+npm init -y : bach yinstali package jasone 

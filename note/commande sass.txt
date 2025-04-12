@@ -87,3 +87,9 @@ color:green;
 
 ___________________________________________________________________
 
+@mixin shadow($padd , $bordRad , $colo)
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px
+    padding: $padd
+    border-radius: $bordRad    
+    color: $colo
+@include shadow(20px , 20px , #fff)0

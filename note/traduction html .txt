@@ -1,3 +1,13 @@
+<link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
+<script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+==> link dyal bootstrap css w script
+
+@import '../../node_modules/bootstrap/scss/bootstrap'
+@import '../../node_modules/bootstrap-icons/font/bootstrap-icons'
+==> link bootstrap sass
+
+------------------------------------------------------------
+
 link  dyal icone lfo9 ftitel:
 <link rel="icon" type="image/png" sizes="32x32" href="./public/images/favicon-32x32.png">
 
