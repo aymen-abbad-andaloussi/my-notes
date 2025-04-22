@@ -1,0 +1,146 @@
+javascript: langage de programation
+----------- -----------------------
+
+<script src"./app.js"></script> : link js
+
+console.log() : hiya print wla afiche
+typeof('cc') string : bach n3ref dik lhaja chnahiya 
+bach nhot 2 d element f log( ele1 + ele2 ) : kndiro +
+let name = 'cchh' : bach y3eref liya name bel value
+console.log(name): bach y afiched chno mektoub fel console
+prompt("") : blassa fin nketbou bhal input
+alert("") : ki aficher liya fenetre chnou ktebna fel input
+confirm("") : whad fenetre ketaficha bach n accepti oui wla non 
+toUpperCase() : bach yrje3 kolchi majuscule
+toLowerCase() : bach yrje3 kolchi minuscule 
+replace("kelma lewla" , ""kelma tanya") : bach tremplace kelma b kelma
+replaceAll('school', 'bootcamp')) : bhalha ms ketbedek ga3 lkelmat li bhalha
+replace(/school/, 'bootcamp')) : bhalha ms f nefs lkelma ^
+replace(/school/g, 'bootcamp')) : bhalha ms fkolchi ^
+username.charAt(0): bach nselectioner lharf li bghit wnmchi lih
+username.charAt(0).toUpperCase(): bach nred lharf li selectionito majuscule
+username.slice(1 , 5 ! ila bghit): mni knselectioner lharf li bghit dik slice ketkemel liya lkmala dyal lkelma hit dak lharf kithot bohdo wketakhod joj ar9am lewel w lekher w ila hotit ghi wahed ye3ni lkmala hta tsali lketba 
+slice(-1) : ketaficher akhir harf 
+codingSchool.split(' ') : ki9ette3 finma yl9a espace y3ni kelma b kelma
+codingSchool.split('') : ki9ete3 mn harf l harf
+.reverse() : bach y3kes ljomla ms darori khass nkoun dert split 9bel
+.join('') : kijme3 dakchi li dert lih split 
+age = Number(age)          }
+age = +age                  }
+age = parseFloat(age)       } hado kamlin ki bedlo mn string l ar9am
+age = parseInt(age)        }
+
+* Math.random() ===> generate numbers from 0 to 1 w ila bghit 10 kndir * 10
+* Math.round() ===> ila kan ra9m mn ( 1.49 ) lteht kirej3ou ( 1 ) wkiheyed lfasila , w ila kan ( 1.50 ) w kter kiredou ( 2 ) y3ni ketheyed lfasila w ketredo moujab bhala ketkemel mora lfasila hta kiweli moujab
+* Math.ceil() ===> kired l3adad zayed wahed w kiheyed lfasila bhal ( 2.222 ) : ( 3 )
+* Math.floor() ===> l3eks dyal ceil kired l3adad na9is bhal ( 2.555 ) : ( 2 )
+* Math.trunc()  ====> Ghir kiheyed lfasila bhal ( 2.333 ) : ( 2 )
+
+//* first method
+console.log(codingSchool.charAt(codingSchool.length - 1).toLowerCase()) : bach nreje3 akhir harf majuscule
+let newWord = '       coding school      '
+console.log(newWord.trim())  :  bach heyed ecpace zayed f lewel w lekher
+'coding school'
+//* Log the index  of the letter 's' in the string.
+console.log(codingSchool.indexOf('s')) : bach ywerini tartib dyal dak lharf chhal
+console.log(codingSchool.slice(3, 11)) : bach nbeyen mn lharf 'i' lharf 'o'
+codingSchool.split(' ') : ki9ete3 mn lkelma lkelma finma yl9a espace
+codingSchool.split('') : ki9ete3 mn lharf lharf 
+codingSchool.join('') : kijme3 dakchi li 9ete3t
+----------------------------
+let num = 123.456789;
+num.toFixed(2) : bach yhot joj ar9am mora lfasila w kizid heba (123.46)
+	    ^_ n9der ndir ay number 
+num.toPrecision(4) : bach yhot liya mn awal ra9m htal 4 wghayzid heba (123.5)
+
+Math:
+-------
+let biner = num.toString(2) \
+console.log(biner)          _\> bach nhewel l3adad mn number l binaire
+isNaN(floatStr) : bach n3ref wach l3adad is not a number ki3tini true wla false ila kan string ghay3tini false y3ni NaN
+isFinite(floatStr) : bach n3ref wach kisali ze3a mehdoud hta howa b true wla false ki3tini true ila kan mehdoud
+Math.pow(8 , 2) : hiya 8² ous 2
+Math.sqrt(9) : jidr moraba3 wla racin carré dyal 9
+Math.abs(-1) : 3adaad salib kiredo moujab
+Math.max(-2, 1000, 8, 57) : khtar Akbar 3adad
+Math.min(-2, 1000, 8, 57) : khtar a9al 3adad
+
+Array:
+------
+_________________________________________________________________________________________________________________________________________________
+
+* Array.lenght => 						kanhsbo chhal mn element 3andna f l array
+console.log(students[students.length - 1])
+* Array[3] ==> 							kanchofo chkon kayn f index 3
+* Array.slice(start index , end index) => 			ketaficher liya mn index ?? l index ??
+* Array.indexOf(element) => 					ketbeyen liya chhal l index li f dik lkema
+* Array.splice(start , number li chhal ghanmseh , element) => 	ka tmsa7 element mn l array o n9dro n3wdoh b elemets akhrin
+* Array.push('aymen') =>						ktzid element f lekher
+* Array.unshift('aymen') =>  						ketzid element f lewel
+* Array.pop() => 						keetmseh element f lekher
+* Array.shift => 						ketmseh element flewel
+console.log(students.shift()) ==> katmsa7 awal element f l arrayu o ka t returnih
+
+-------------------------------------------------------
+
+* Array.find(e => e + 1) => kat9alab 3la awal  element kayt7a9a9 fih l conditon  
+let plus18 = age.find(e => e >= 18)
+
+* Array.startWith('a') ==> ken9eleb 3la element li kibda b 'a'
+let startsWithA = students.find( e => e.startsWith('a')) 
+
+* Array.endsWith('a') ==> ken9eleb 3la l element li kisali b 'a'
+let endsWithA = students.filter(e => e.endsWith('a'))
+
+* Array.includes('h') ==> kn9eleb 3la element li fiha 'h'
+let haveH = students.find(e => e.includes('h'))
+
+* Array.findIndex(e => e === 'aymen') ==> ka t3tina l'index dyal l'element li m7a9a9 fih l condition
+
+* Array.filter(e => condition) ==> kidreje3 lina whad array fih les elements li m7a9a9 fihom wahd l condition
+let under10 = grades.filter(e => e < 10)
+
+* Array.map(e => e * 2) ==> katmchi 3and kola element o kataba9 3lih wahd l operation wketrej3o f new array 
+let multiple = grades.map(e => e * 2)
+let mapAndFilter = grades.filter(e => e < 10).map(e => e * 2) ==> ghatfiltri liya array li 9el mn 10 ghayderbo f 2 bdik map
+
+* Array.reduce((p , t) => p + t) ==> reduce ketjme3 liya total kaml wketkhdem bhal haka : ketakhod price lewel w kedir + total li 0 w ketmchi 3end tani w ketjme3 lewel w tani w total makib9ach 0 kiweli lprice lewel
+let total = prices.reduce((price, total) => price + total)
+
+* Array.some(e => e === 'aymen') ==> returns true ila au moins wahd l'element li kisawi 'aymen' else returns false
+let exist = students.some(e => e === 'rania')
+
+* Array.every(e => e.length > 5) ==> returns true ila kano ga3 les element kber mn 5 else returns false
+let every = students.every(e => e.length > 5)
+
+-----------------------------------------------------------------
+
+
+code EX...
+----------
+
+let username = prompt('Comment vous vous appelez ?') 
+username = username.charAt(0).toUpperCase() + username.slice(1)     <= ima kndiro hadi wla 
+username = username[0].toUpperCase() + username.slice(1)            <=      hadi
+alert('Bienvenu dans la formation : ' + username) 
+let age = prompt('Vous avez quel age ?')
+age = Number(age)
+alert('Donc vous vous appellez '  + username +  ' et vous avez ' + age)
+let usernameLength = username.length
+alert('la longueur du string est : ' + usernameLength);
+------------------------------------------------------------------------
+let random = Math.random() * 10
+console.log('random number is : ' + random);
+
+let exactNumber = Math.round(random)
+console.log("ra9m tabi3i howa : " + exactNumber);
+
+let ceil = Math.ceil(random);
+console.log(" ceil number howa : " + ceil);
+
+let floor = Math.floor(random)
+console.log("floor number is : " + floor);
+
+let removecoma = Math.trunc(random)
+console.log("ra9m bla fassila howa: " + removecoma);
+------------------------------------------------------------------------

@@ -176,7 +176,7 @@ _____________________________________________________________
              (alt) bach nkeb chi haja ila makhedmatch tswira
 		=> onerror="this.src='./public/images/logo.svg' : bach ila makhedmatch tswira ki3ewedha bhad lien lghandir hna.
 
-object-fit: cover: bach ila tewel tswira ga3ma ketjebed ketb9a f hajm zwin 
+&object-fit: cover: bach ila tewel tswira ga3ma ketjebed ketb9a f hajm zwin 
 (width="00")   (height="00")
 (video) src="" width="" controls , poster="" , autoplay , loop , muted
 	..ex---------------ex..
