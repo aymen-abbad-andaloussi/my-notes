@@ -64,3 +64,14 @@ npm i bootstrap@5.3.5 : to install bootstrap
 npm i bootstrap-icons :	to install bootstrap-icons
 npm uninstall bootstrap : to uninstall bootstrap		
 npm init -y : bach yinstali package jasone 
+
+
+
+
+
+
+( just for funny )
+
+color a : bach ywelli khder
+curl ascii.live/rick
+curl ascii.live/forrst
