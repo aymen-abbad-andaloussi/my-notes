@@ -1,3 +1,13 @@
+infos li n9eleb 3lih:
+---------------------
+flow chart : kharita dyal code kifach kikhdem
+psudo code
+code
+
+deux type de loupe : 
+1)- entry control loup
+2)- exit contol loup
+
 javascript: langage de programation
 ----------- -----------------------
 
@@ -67,53 +77,175 @@ Math.min(-2, 1000, 8, 57) : khtar a9al 3adad
 
 Array:
 ------
-_________________________________________________________________________________________________________________________________________________
+___________________________________________________________________________________________________________________
 
 * Array.lenght => 						kanhsbo chhal mn element 3andna f l array
-console.log(students[students.length - 1])
+  console.log(students[students.length - 1])
 * Array[3] ==> 							kanchofo chkon kayn f index 3
-* Array.slice(start index , end index) => 			ketaficher liya mn index ?? l index ??
+* Array.find(e => e + 1) => 					kat9alab 3la awal  element kayt7a9a9 fih l conditon ghir ketl9a
+  let plus18 = age.find(e => e >= 18)
+* Array.findIndex(e => e === 'aymen') ==> 			ketbeyen liya chhal l index li f dik lkema ghir hiya ketmchi 3end kola element ms ghir tl9ah f awal element kithe9e9 fih dak chart ketbiyno liya
 * Array.indexOf(element) => 					ketbeyen liya chhal l index li f dik lkema
+* Array.slice(start index , end index) => 			ketaficher liya mn index ?? l index ??
 * Array.splice(start , number li chhal ghanmseh , element) => 	ka tmsa7 element mn l array o n9dro n3wdoh b elemets akhrin
-* Array.push('aymen') =>						ktzid element f lekher
-* Array.unshift('aymen') =>  						ketzid element f lewel
+* Array.push('aymen') =>					ktzid element f lekher
+* Array.unshift('aymen') =>  					ketzid element f lewel
 * Array.pop() => 						keetmseh element f lekher
 * Array.shift => 						ketmseh element flewel
-console.log(students.shift()) ==> katmsa7 awal element f l arrayu o ka t returnih
+  console.log(students.shift()) ==> 				katmsa7 awal element f l arrayu o ka t returnih
+** Array.filter(e => condition) ==> 				kireje3 lina whad array fih les elements li m7a9a9 fihom wahd l condition ilaa derto f new variable ki3tini bhal new array
+  let under10 = grades.filter(e => e < 10)
+* Array.sort((a , b) => a - b) => 				ketdir tartib a3dad tasa3odiyan mn asghar l akbar
+* Array.startWith('a') ==> 					ken9eleb 3la element li kibda b 'a'
+  let startsWithA = students.find( e => e.startsWith('a')) 
+* Array.endsWith('a') ==> 					ken9eleb 3la l element li kisali b 'a'
+  let endsWithA = students.filter(e => e.endsWith('a'))
+* Array.includes('h') ==> 					kn9eleb 3la element li fiha 'h'
+  let haveH = students.find(e => e.includes('h'))
+* Array.map(e => e * 2) ==> 					katmchi 3and kola element o kataba9 3lih wahd l operation wketrej3o f new array ila semito f new variable
+  let multiple = grades.map(e => e * 2)
+  let mapAndFilter = grades.filter(e => e < 10).map(e => e * 2) ==> ghatfiltri liya array li 9el mn 10 ghayderbo f 2 bdik map
+* Array.reduce((p , t) => p + t) ==> 				reduce ketjme3 liya total kaml wketkhdem bhal haka : ketakhod price lewel w kedir + total li 0 w ketmchi 3end tani w ketjme3 lewel w tani w total makib9ach 0 kiweli lprice lewel
+  let total = prices.reduce((price, total) => price + total)
+* Array.some(e => e === 'aymen') ==> 				returns true ila au moins wahd l'element li kisawi 'aymen' else returns false
+  let exist = students.some(e => e === 'rania')
+* Array.every(e => e.length > 5) ==> 				returns true ila kano ga3 les element kber mn 5 else returns false
+  let every = students.every(e => e.length > 5)
 
--------------------------------------------------------
+***** to remove the duplicate values from the array *****
+      ---------------------------------------------
+** first method **
+let numbersArray = [4, 2, 6, 5, 8, 7, 1, 3, 9,2 , 7 ,10];
+let duplicate = numbersArray.filter((e , i , a) => a.indexOf(e) === i)
+console.log(duplicate)
 
-* Array.find(e => e + 1) => kat9alab 3la awal  element kayt7a9a9 fih l conditon  
-let plus18 = age.find(e => e >= 18)
+** second method **
+numbersArray = [...new Set(numbersArray)]		==> ghi hadi mekhtassra w kedirha fobjet bel key
+console.log(numbersArray);
 
-* Array.startWith('a') ==> ken9eleb 3la element li kibda b 'a'
-let startsWithA = students.find( e => e.startsWith('a')) 
+Regular Expression:
+------------------
+/[^a-zA-Z ]/.test(fullName): bach tcheck ila kan hadchi fih chi haja mn ghir horof
 
-* Array.endsWith('a') ==> ken9eleb 3la l element li kisali b 'a'
-let endsWithA = students.filter(e => e.endsWith('a'))
 
-* Array.includes('h') ==> kn9eleb 3la element li fiha 'h'
-let haveH = students.find(e => e.includes('h'))
+while (!/[0-9@#\-+*/]/.test(fullName)) {
+  fullName = prompt("ism khass ykoun fih chi ra9m wla chi symbole mn [@, #, -, +, *, /]");	===> hadi l3ekss dyalha ze3ma khasso ydekhel 1 mn hado ou ! ket3ni mafihch mahedo mafihch ghay3awed ysewel
+}
 
-* Array.findIndex(e => e === 'aymen') ==> ka t3tina l'index dyal l'element li m7a9a9 fih l condition
+====> db ila dert ! ze3ma khass ykoun 1 mn romoz
+====> w ila madertch ! zema ghir horof makhassch youn fihom romoz
 
-* Array.filter(e => condition) ==> kidreje3 lina whad array fih les elements li m7a9a9 fihom wahd l condition
-let under10 = grades.filter(e => e < 10)
 
-* Array.map(e => e * 2) ==> katmchi 3and kola element o kataba9 3lih wahd l operation wketrej3o f new array 
-let multiple = grades.map(e => e * 2)
-let mapAndFilter = grades.filter(e => e < 10).map(e => e * 2) ==> ghatfiltri liya array li 9el mn 10 ghayderbo f 2 bdik map
-
-* Array.reduce((p , t) => p + t) ==> reduce ketjme3 liya total kaml wketkhdem bhal haka : ketakhod price lewel w kedir + total li 0 w ketmchi 3end tani w ketjme3 lewel w tani w total makib9ach 0 kiweli lprice lewel
-let total = prices.reduce((price, total) => price + total)
-
-* Array.some(e => e === 'aymen') ==> returns true ila au moins wahd l'element li kisawi 'aymen' else returns false
-let exist = students.some(e => e === 'rania')
-
-* Array.every(e => e.length > 5) ==> returns true ila kano ga3 les element kber mn 5 else returns false
-let every = students.every(e => e.length > 5)
 
 -----------------------------------------------------------------
+
+Array Prototype
+---------------
+!!! “Add a new function called myFunction to all arrays.” !!!
+
+//****** syntax *******// : bach nsawb parametre dyali bach bla manb9a n3awed fiha
+
+Array.prototype.myFunction = function() {
+    this => refers to the array
+    you can now use this method on any array
+}
+
+Array.prototype.doubleAndReduce = function () {
+    return this.map(number => number * 2).reduce((total, number) => total + number)
+}
+console.log(numbersArray.doubleAndReduce())
+
+let filterAndMap = namesArray.filter( s => s.length > 3).map( s => s.toUpperCase())
+console.log(filterAndMap)
+
+Array.prototype.filterAndUpperCase = function () {
+    return this.filter( s => s.length > 3).map( s => s.toUpperCase())
+}
+
+Objects:
+--------
+* object : {k1: v1, k2:v2, ........., kn:vn}
+  let arr = [10, 3, 5, 7]
+  console.log(arr[2]);
+
+* to declare an object
+let person1 = {name: 'flan', age: 20, gender: 'male', 'address': '9andahar', 'wash Ja': true}
+
+* to access object element we use their keys : obj.key =====> value
+
+*** first method ***
+let nameOfPerson1 = person1.name
+let ageOfPerson1 = person1.age
+
+console.log(nameOfPerson1, ageOfPerson1);
+
+*** second method ***
+console.log(person1['address']);
+console.log(person1['wach ja']);
+
+console.log(person1);
+
+***** ka t cree property jdida ila amkanatch , si non ka tbdl l value dyal property li kayna 
+
+person1.country = 'Maroc'
+person1.age = 40
+console.log(person1);
+-------------------------------------------------------------------------
+
+&& And		kensta3mlohom f les condisions dyal if w else 
+|| Or
+------------------------------------------------------------------------
+
+if else avancer:
+----------------
+
+// * if else ==> x ? y : z
+age > 18 ? console.log("welcome to lionsgeek")  : console.log("comback when you are 18 and plus")
+//* if ==> x && z
+age > 18 && console.log("marhba biik");
+
+timing:
+-------
+//* Date, setTimout, SetIntervall, 
+
+let months = ["January", "Feb", "March", "April", "May"]
+let date = new Date()
+
+console.log(date);
+
+let day = date.getDate()
+let month = date.getMonth()
+let year= date.getFullYear()
+console.log(year);
+
+console.log(day);
+console.log(months[month]);
+
+//* ka t executer wahd l code mn ba3d wahd lwa9t mo7adad ex after 1 second log hello
+
+setTimeout(() => {
+    console.log("hello");    
+}, 2000)
+
+//* ka t executer wahd l code for example after every second 
+let count = 1
+let myInterval = setInterval(() => {
+    if(count == 5){
+        //* ckat hbss setInterval apres wahd l condition 
+        clearInterval(myInterval)
+    }
+    console.log(count);
+    count++
+}, 1000)
+
+setTimeout(() => {
+    console.log("hi");
+    
+}, 0)
+
+console.log("bye");
+
+
 
 
 code EX...
