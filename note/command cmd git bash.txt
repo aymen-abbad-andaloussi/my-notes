@@ -15,6 +15,9 @@ rmdir : kimsseh
 
 git init : bach n ajouter git
 
+git configue --global --add safe.directory E:/....../.......
+bach n3tih samah belmilkiya dyakl dossier
+
 git config --global user.name "aymen abbad andaloussi"
 git config --global user.email "aymenandaloussi69@gmail.com"
 
