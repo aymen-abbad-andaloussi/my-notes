@@ -46,6 +46,7 @@ live
 auto rename tag 
 auto close tag
 prettier
+comment styler
 GitHub copilot
 
 __________________________________________________________________________________________________________________________________
