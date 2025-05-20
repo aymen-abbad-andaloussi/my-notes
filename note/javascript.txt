@@ -245,6 +245,37 @@ setTimeout(() => {
 
 console.log("bye");
 
+------------------------ drag and drop ---------------------
+
+dragstart , preventdefalut on dragover, drop
+--------------------------------------------
+
+=> taskArea.draggable = true | khassha tkoun atribute f element li baghi nherk knrej3o 9abel ltehrak.
+
+addEventListener('dragstart',(e)=>{
+let selectTarget = e.target
+
+doing.addEventListener('dragover',(e)=>{
+e.pereventDefault()
+
+doing.addEventListener('drop',(e)=>{
+doing.appendChild(divelement)
+selectTarget=null
+
+  })
+ })
+})
+
+'dragstart',(e)=>{} : ket3ni ghabda ytherek mn start 
+(e) : ket3ni kola element ghatredo e
+.target : ya3ni had l element li selectionit
+e.target : ye3ni had element w li mselectioner daba y3ni li ba9i hazz db 
+div.addEventListener'dragover',(e)=>{} : kn9ssed dik div li baghi nhot fiha element wkengoliha ;
+e.preventDefault() : ze3ma heydi defaul w accepti ay element hotit fik
+div.addEventListener'drop',()=>{} : knhot fiha element li knt hezit
+div.appendCild(selectTarget) : hadi ketji fwet drop bach npushi fiha les element
+selectTarget = khassni nkhwiha mn les element 
+
 
 
 
