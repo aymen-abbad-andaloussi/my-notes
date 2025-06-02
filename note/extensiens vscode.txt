@@ -1,0 +1,20 @@
+extensiens vscode:
+------------------
+
+live serveur
+material 
+auto
+add jscod comment
+ES7+ React/Redux/React-Native snippets
+
+react:
+------
+simple react snippets
+sass.(.sass only)
+reactjs code snippets
+react router snippets
+
+tailwind:
+---------
+tailwind docs
+tailwind css intelisense

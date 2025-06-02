@@ -1,0 +1,37 @@
+📦 Create a React App (with Vite)
+----------------------------------
+
+- npm create vite@latest
+
+➡️ Choose:
+Framework: React
+Variant: JavaScript
+
+- cd your-project-name
+- npm i
+- npm run dev
+
+🧹 Clean up your project
+-------------------------
+
+Delete the files you don't need:
+App.css
+logo.svg
+Any boilerplate in App.jsx
+
+--------------------------------------------
+
+npm install tailwindcss @tailwindcss/vite
+ modify vite.config.ts
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
+export default defineConfig({
+  plugins: [
+    tailwindcss(),
+  ],
+})
+ Import Tailwind CSS
+@import "tailwindcss";
+ run your react app
+npm run dev
+
