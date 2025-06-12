@@ -2,7 +2,6 @@
 ----------------------------------
 
 - npm create vite@latest
-
 ➡️ Choose:
 Framework: React
 Variant: JavaScript
@@ -31,7 +30,20 @@ export default defineConfig({
   ],
 })
  Import Tailwind CSS
-@import "tailwindcss";
+- @import "tailwindcss";
+- import tailwindcss from '@tailwindcss/vite'
  run your react app
 npm run dev
+
+npm install react-icons --save
+import { FaBeer } from 'react-icons/fa';
+
+class Question extends React.Component {
+  render() {
+    return <h3> Lets go for a <FaBeer />? </h3>
+  }
+}
+
+
+--------------------------------------------------
 

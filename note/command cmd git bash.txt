@@ -68,6 +68,14 @@ npm i bootstrap-icons :	to install bootstrap-icons
 npm uninstall bootstrap : to uninstall bootstrap		
 npm init -y : bach yinstali package jasone 
 
+npm create vite@latest : to creat react to install
+- cd your-project-name
+- npm i				: to enter folder and install react and run
+- npm run dev
+
+npm install tailwindcss @tailwindcss/vite : to install tailwindcss
+npm install react-icons --save : to install react icons
+npm i react-router-dom
 
 
 

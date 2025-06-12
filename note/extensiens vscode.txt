@@ -6,6 +6,13 @@ material
 auto
 add jscod comment
 ES7+ React/Redux/React-Native snippets
+prittier
+ctrl + shift + P :     "editor.formatOnSave": true, : knzido 9bel mn hada 
+
+"[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+ 
 
 react:
 ------
@@ -18,3 +25,5 @@ tailwind:
 ---------
 tailwind docs
 tailwind css intelisense
+
+eslint : ketwerik ila kan chi khataa f jsx ki3elmek

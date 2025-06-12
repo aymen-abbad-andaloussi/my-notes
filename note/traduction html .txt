@@ -210,6 +210,7 @@ identificateurs:
 id (#) kendiro mera wehda b nefs smiya
 class (.) n9der n3awedha
 
+truncate : ki9ete3 lketba ila kant twila
 
 dir: RTL , LTR
 text align : ( left , right , center , justify ).
