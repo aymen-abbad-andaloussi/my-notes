@@ -47,3 +47,68 @@ class Question extends React.Component {
 
 --------------------------------------------------
 
+import React, { useState } from 'react'
+
+export default function Main() {
+    const [numb , setNumb] = useState(0)
+    const numPlus = () =>{
+        setNumb(numb+1)
+    }
+
+  return (
+    <>
+    <div className="w-[100vw] h-[100vh] bg-amber-100 flex justify-center items-center ">
+        <button className="bg-amber-700 w-[15vw] h-[10vh] rounded-xl text-amber-100 text-5xl cursor-pointer hover:bg-amber-600 active:bg-amber-900 " onClick={numPlus} >{numb} like</button>
+    </div>
+    </>
+  )
+}
+
+-------------------------------------------------
+
+# Images 
+
+
+import { React } from "react";
+import { Images, Videos } from "../constants";
+import watch from "../assets/images/item-03.jpg";
+
+export default function Shop() {
+  return (
+    <div>
+      <h1>Shop </h1>
+      {/* method 1 */}
+      <img src={watch} alt="" />
+
+      {/* method 2 */}
+      <img src={Images.converse} alt="" />
+      <img src={Videos.imagevideo} alt="" />
+    </div>
+  );
+}
+
+
+### Method 2 : 
+
+**1 -  create folder constant -> src**
+
+**2-  create index.js**
+
+**3- create  images.jsx**
+
+**4 - export  an object  of images  paths from  images.jsx **
+
+
+import converse from  '../assets/images/item-cart-02.jpg'
+import watch from '../assets/images/item-cart-03.jpg'
+
+export default {converse, watch}
+
+
+** export  all images  from  index.js ** 
+
+
+import Images from '../constants/images'
+import Videos from '../constants/videos'
+
+export {Images, Videos}
