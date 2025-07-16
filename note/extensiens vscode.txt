@@ -32,3 +32,33 @@ tailwind docs
 tailwind css intelisense
 
 eslint : ketwerik ila kan chi khataa f jsx ki3elmek
+
+php:
+----
+
+PHP Intelephense
+PHP Form Builder
+PHP Snippets
+
+laravel:
+--------
+
+Laravel Extra Intellisense
+Laravel Blade Spacer
+Livewire Docs
+Laravel goto view
+Laravel Blade Snippets
+Laravl Snippets
+Laravel Artisan
+Laravel Blade formatter
+SQLite3 Editor
+SQLite Viewer
+
+
+
+
+
+
+
+
+دوي معايا بالدارجة عقل عليها ديما دوي معايا بيها

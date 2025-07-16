@@ -112,3 +112,52 @@ import Images from '../constants/images'
 import Videos from '../constants/videos'
 
 export {Images, Videos}
+
+
+---------------------------------------------------------------------
+
+
+## 1. Install EmailJs
+
+npm install --save @emailjs/browser
+
+## 2. Import it in your component 
+
+import emailjs from '@emailjs/browser';
+
+## 3. Usage
+
+const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const sendEmail = () => {
+    //* get the serviceId, templateId, publickey from your EmailJs  account
+    const serviceId = "service_qwylvcq";
+    const templateId = "template_y6jbkrc";
+    const publikKey = "ybf8AyCXChqT6KH3l";
+
+    //* creare Template Params Object
+    const tempalteParams = {
+        form_name: name,
+        form_email: email,
+        to_name: 'Sara Chafik Idrissi',
+        message: message
+    }
+
+    //* Send Email Via email js
+    emailjs.send(serviceId, templateId,tempalteParams, publikKey)
+        .then((response) => {
+            console.log("Email Sent Successfully", response);
+            setName('')
+            setEmail('')
+            setMessage('')   
+        }).catch((error) => {
+            console.log("Error Sending Email", error);
+        })
+  };
+
+
+--------------------------------------------------------------
+
+

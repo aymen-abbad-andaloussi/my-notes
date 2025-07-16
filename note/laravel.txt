@@ -1,0 +1,372 @@
+composer ceate-project laravel/laravel .
+
+composer global require laravel/installer
+
+laravel new projet
+none
+0
+sqlite
+yes
+
+cd newProjet
+composer run dev
+
+
+php artisan make:view pageName
+php atrisan make:controller PageController
+
+
+<?php
+
+
+use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
+
+Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/home', [HomeController::class, 'index'])->name("home");
+
+
+public function index(){
+        return view('home');
+    }
+
+<a href="{{ route('about') }}">About</a>
+
+-----------------------------------------------------------------
+
+ilaa bghit ndir lchi folder f git hub git clone:
+
+npm i
+composer i
+
+2- duplique enve , edite file name , decomments mn 22 > 26
+
+3- php artisan key:generate
+
+4- php artisan migrate
+5- php artisan migrate:refresh --seed
+
+
+------------------------------------------------------------
+
+
+
+Navigating between pages
+1 - first you name the route 
+Route::get('/about', [AboutController::class, 'index'])->name('about');
+
+2- call it from blade using route{{.....}}
+        <a href="{{ route('about') }}">About</a>
+ 
+Variables
+  public function index() {
+        $students = ['mohammed', 'amal', 'douaa', 'amhana'];
+        $age = 13;
+        return view('home', compact('age', 'students'));
+   }
+
+Display vriables in blade
+<p>Students age is :{{ $age }}</p>
+    {{ $students[0] }}
+    @foreach ($students as $student )
+        <h1>name: {{ $student }}</h1>
+    @endforeach
+
+Providers
+to pass data from one  file to all files  in laravek 11  we  use  the  AppServiceProvider
+
+1 - go to
+
+app/provider/appServiceProvider.php
+
+2- add  your variable
+3- share it with all views
+4- make sure View is imported like this 
+use Illuminate\Support\Facades\View;
+
+
+    public function boot(): void
+    {
+        //
+        $students = ['mohammed', 'amal', 'douaa', 'amhana'];
+        $numberOfStudents = 4;
+        View::share([
+            'list' => $students,
+            'class' => $numberOfStudents
+        ]);
+    }
+Layouts
+layouts makes your clode look cleaner with creating one template and share it with different views 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    @include('layouts.navbar')
+
+    @yield('content')
+
+    @include('layouts.footer')
+
+
+</body>
+
+</html>
+
+
+we create a index.blade.php inside  layout folde  
+ resources/views/layouts/index.blade.php 
+
+1-     to create a new page   extend  the Code structure from  the layouts.index
+2 -   add  our section  in blade.php using the  section tag and  targeting the content
+
+@extends('layouts.index')
+
+@section('content')
+    <h1>Home Content</h1>
+@endsection
+partials
+to organize  our code we can use   the include concept
+
+1- we create a file  that contain  our section   e.x : home/partials/students
+2- we include  it inside  the view
+Image
+the main page 
+
+@extends('layouts.index')
+
+@section('content')
+    @include('Contact.partials.form')
+    @include('Contact.partials.map')
+@endsection
+
+
+the from section 
+
+<div>
+    <h1>Contact Form</h1>
+</div>
+
+
+ the map section
+<div>
+    <h1>Contact Map</h1>
+</div>
+
+
+
+
+
+
+
+
+model
+view
+controler
+
+
+---------------------------------------------------------
+
+How to create model
+php artisan make:model (Name)
+
+Migration
+php artisan make:migration create_(names)_table
+
+
+How to create Seeder
+php artisan make:seeder NameOfSeeder
+
+
+Model
+we  create our table's model
+
+    protected $fillable = [
+        "name",
+        "lastName",
+        "age",
+        "class",
+        "passed",
+        "study"
+    ];
+
+
+inside the migration table
+
+   
+            $table->id();
+            $table->string('name');
+            $table->string('class');
+            $table->integer('age');
+            $table->boolean('attendence')->default(true);
+            $table->boolean('passed')->default(false)->nullable();
+            $table->timestamps();
+ 
+Seeder
+if  you want  seeders you can create them on 
+ NameSeeder   as 
+       Student::insert([
+             [
+            'name' => 'sara',
+            'class' => 'cooding 3',
+            'age' => 28,
+            'attendence' => true,
+            'passed' => true
+        ], 
+        [
+            'name' => 'hind',
+            'class' => 'cooding 2',
+            'age' => 20,
+            'attendence' => true,
+            'passed' => false
+        ]
+        ]);
+
+
+#insert your databse with seeders
+
+call your seeder in DatabaseSeeder
+
+   $this->call([
+            StudentSeeder::class,
+        ]);
+
+
+php artisan db:seed
+
+-----------------------------------------------------------------
+create data:
+-----------
+
+
+
+
+1)- php artisan make:model Smiya 		harf lewel majuscule sans s
+2)- protected $fillable = ([
+        'name',
+        'class',
+        'age',
+        'attendence',
+        'passed'
+    ]);
+						: kn3emer tableau
+
+3)- php artisan make:migration create_(smiyas)_table		smiyaa minuscule avec s
+4)- $table->string('name');
+    $table->string('class');
+    $table->integer('age');
+    $table->boolean('attendence')->default(true);		par defaut yji true
+    $table->boolean('passed')->default(false)->nullable(); 	y9der ykheliha khawi
+
+5)- php artisan make:seeder NameOfSeeder 		to create seeder harf lewel maj + Seeder
+
+6)- knmchi l file seeders/DatabaseSeeder.php knzid hadchi bach yban tableau dyal data
+	$this->call([
+            StudentSeeder::class,			
+        ]);
+
+
+-----------------------------------------------------------------
+
+
+Factory
+1- to create multiple data first of all we have to create our factory using command
+php artisan make:factory NameFactory
+
+
+2 - open the NameFactory.php add the factory model
+     //
+
+     $class = ["coding school", "media school"];
+
+        return [
+            //
+            "name" => fake()->name(),
+            "age" => fake()->numberBetween(18, 40),
+            "class" => fake()->randomElement($class)
+        ];
+
+
+3- open the NameSeeder.php to call the factory method
+    Name::factory(50)->create();
+
+
+ps : make sur your seeder  is already called  (open the DatabaseSeeder.php 
+
+make sure Model has this :
+
+use HasFActory
+
+use HasFactory;
+    
+    protected $fillable = ([
+        'name',
+        'age',
+        'class'
+    ]);
+}
+
+
+4- refresh + seed your database
+
+
+----------------------------------------------
+
+CRUD
+READ
+to get elements from database :
+
+NameController.php
+
+    public function index() {
+        //* Read
+
+
+        //^ get all data in the Participant Model
+        $participants = Participant::all();
+
+
+        //^ get the first Participant
+        $firstParticipant = Participant::all()->first();
+
+        //^ get a specific participant 
+        $thirdParticipant = Participant::where('id', '=', 3)->get();
+
+
+        //^ cout number of particpants whom their age is less than 20 years old
+        $lessTahntwenty = Participant::where('age', '<=', 20)->count();
+
+
+        //^ sending data to home view using compact('data1', 'data2', .....)
+        return view('Home.home', compact('participants', 'thirdParticipant'));
+    }
+
+
+name.blade.php
+
+
+-------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -168,7 +168,7 @@ table:
 (th) ki3ti ster vertical kiji mora (tr) ketkoun ghi f (thead)
 (td) ki3ti ster vertical kiji mora (tr) ketkoun ghi f (tbody)
 (colspan) damj sofof
-(rowspan) damj l3awamid
+	(rowspan) damj l3awamid
 (thead);(tbody);(tfoot) ras ou ljism ou rejlin tableau 
 (bgcolor) lewen tableau
 _____________________________________________________________
