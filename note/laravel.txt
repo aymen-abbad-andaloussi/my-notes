@@ -1,8 +1,8 @@
 composer ceate-project laravel/laravel .
-
 composer global require laravel/installer
 
-laravel new projet
+
+laravel new smiya-projet
 none
 0
 sqlite
@@ -14,6 +14,17 @@ composer run dev
 
 php artisan make:view pageName
 php atrisan make:controller PageController
+
+
+
+php artisan make:model Name -mcsfr
+
+
+m : migration
+c : controller
+s : seeder
+f : factory
+r : resources
 
 
 <?php
@@ -208,7 +219,7 @@ inside the migration table
             $table->string('name');
             $table->string('class');
             $table->integer('age');
-            $table->boolean('attendence')->default(true);
+	            $table->boolean('attendence')->default(true);
             $table->boolean('passed')->default(false)->nullable();
             $table->timestamps();
  
@@ -245,13 +256,15 @@ call your seeder in DatabaseSeeder
 php artisan db:seed
 
 -----------------------------------------------------------------
+
+
 create data:
 -----------
 
 
 
-
 1)- php artisan make:model Smiya 		harf lewel majuscule sans s
+
 2)- protected $fillable = ([
         'name',
         'class',
@@ -262,8 +275,10 @@ create data:
 						: kn3emer tableau
 
 3)- php artisan make:migration create_(smiyas)_table		smiyaa minuscule avec s
+
 4)- $table->string('name');
     $table->string('class');
+
     $table->integer('age');
     $table->boolean('attendence')->default(true);		par defaut yji true
     $table->boolean('passed')->default(false)->nullable(); 	y9der ykheliha khawi
@@ -299,7 +314,7 @@ php artisan make:factory NameFactory
 
 3- open the NameSeeder.php to call the factory method
     Name::factory(50)->create();
-
+	
 
 ps : make sur your seeder  is already called  (open the DatabaseSeeder.php 
 
@@ -356,6 +371,415 @@ name.blade.php
 
 
 -------------------------------------------------
+
+
+shortcut
+to create   everything with 1 command  we  use
+
+php artisan make:model Player -mcsfr
+
+
+m : migration
+c : controller
+s : seeder
+f : factory
+r : resources
+Create
+1- we create form in blade.php 
+
+name  should be equale to database s column name
+csrf key  must be included
+action  ==  function name  in the web.php   && method == post
+
+     <form action="/post/store" method="post" class="w-[50vh] h-[100%] border p-2 flex flex-col  gap-y-10 ">
+
+            @csrf
+            <div class="flex flex-col ">
+                <label class="font-bold" for="">Post Athor</label>
+                <input type="text" class="border p-2" placeholder="enter your name" name="author_name">
+            </div>
+            <div class="flex flex-col ">
+                <label class="font-bold" for="">Post Title</label>
+                <input type="text" class="border p-2" placeholder="enter post title" name="post_title">
+            </div>
+            <div class="flex flex-col ">
+                <label class="font-bold" for="">Post Description</label>
+                <textarea type="text" class="border p-2" placeholder="enter post description"  name="post_description"> </textarea>
+            </div>
+
+
+            <button type="submit" class="border w-[200px] bg-green-300 rounded-md py-2 m-auto">Add Post</button>
+
+        </form>
+ 
+2- we create function in Controller to store our data 
+
+  public function store(Request $request)
+    {
+        //* responsible for storing data coming from a form 
+
+
+
+        //* data validation
+        $request->validate([
+            "author_name" => "required|string",
+            "post_title" => "required|string",
+            "post_description" => "required|string"
+        ]);
+
+       
+
+        //* data store 
+
+        Post::create([
+            "author_name" => $request->author_name,
+            "post_title" => $request->post_title,
+            "post_description" => $request->post_description
+        ]);
+
+        //* redirects user back to the page
+        return back();
+    }
+ 
+3 - we call our function  in  web.php  using post method
+
+Route::post('/post/store', [PostController::class, 'store'])->name('post.store');
+
+
+
+------------------------------------------------------------------------
+
+
+Show
+to  display a specefied  element   from  database ( like  REACT PRODUCTS  EXO )
+we  use  show function
+1- pass the param using compact 
+    /**
+     * Display the specified resource.
+     */
+ public function show(Post $post)
+    {
+
+        return view('Post.showPost', compact('post'));
+
+    }
+
+
+​
+2 - create web route ⚠️ respect the naming convention 
+//* to show details of a specific element
+
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('post.show');
+
+
+​
+3- pass the param using <a> link with the element's id ⚠️ respect the naming convention  
+                   <a href="/posts/{{ $post->id }}" class="text-blue-600 underline">see details</a>
+
+
+
+
+-----------------------------------------------------------------------------
+
+
+Delete
+1- pass the param in your destroy function + delete it 
+
+ public function destroy(Product $product)
+    {
+        //
+        $product->delete();
+        return back();
+    }
+
+
+ 2 - create web route + use delete method ⚠️ respect the naming convention 
+
+Route::delete("/product/destroy/{product}", [ProductController::class, "destroy"])->name("product.destroy");
+
+
+ 3- create form to delete the specefied element ⚠️do not forget to  respect the naming convention  
+
+      <form action="/product/destroy/{{ $product->id }}" method="post">
+                @csrf
+                @method('DELETE')
+                <button type="submit">Delete Product</button>
+            </form>
+
+-------------------------------------------------------------------
+
+Update
+
+<form action="/product/update/{{ $product->id }}" method="post">
+        @csrf
+        @method('PUT')
+        <div class="mb-4">
+            <label for="name" class="block text-gray-700 font-medium mb-2">Name</label>
+            <input type="text" id="name" name="name" value="{{ old('name', $product->name) }}"
+                class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400" required>
+        </div>
+        <div class="mb-4">
+            <label for="age" class="block text-gray-700 font-medium mb-2">Price</label>
+            <input type="number" id="age" name="price" value="{{ old('price', $product->price) }}"
+                class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400" required>
+        </div>
+        <div class="mb-4">
+            <label for="age" class="block text-gray-700 font-medium mb-2">Stock</label>
+            <input type="number" id="age" name="stock" value="{{ $product->stock }}"
+                class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="block text-gray-700 font-medium mb-2">Product Sizes</label>
+            <div class="flex flex-wrap -mx-2">
+                <div class="px-2 w-1/3">
+                    <label for="animal-cat" class="block text-gray-700 font-medium mb-2">
+                        <input type="checkbox" id="animal-cat" name="sizes[]" value="s" @checked(in_array('s', $product->sizes)) class="mr-2">S 
+                    </label>
+                </div>
+                <div class="px-2 w-1/3">
+                    <label for="animal-dog" class="block text-gray-700 font-medium mb-2">
+                        <input type="checkbox" id="" name="sizes[]" value="m" @checked(in_array('m', $product->sizes))
+                            class="mr-2">M
+                    </label>
+                </div>
+                <div class="px-2 w-1/3">
+                    <label for="animal-bird" class="block text-gray-700 font-medium mb-2">
+                        <input type="checkbox" id="animal-bird" name="sizes[]" value="l" @checked(in_array('l', $product->sizes)) class="mr-2">L
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="mb-4">
+            <label for="message" class="block text-gray-700 font-medium mb-2">Description</label>
+            <textarea id="message" name="description" 
+                class="border border-gray-400 p-2 w-full rounded-lg focus:outline-none focus:border-blue-400" rows="5">{{ $product->description }}</textarea>
+        </div>
+        <div>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">Submit</button>
+        </div>
+
+    </form>
+
+
+2 we create function that show the  update  page 
+
+    public function edit(Product $product)
+    {
+        //
+        return view("product.partials.edit", compact('product'));
+    }
+
+
+3  we create function that handle the update 
+
+     public function update(Request $request, Product $product)
+    {
+        //
+        request()->validate([
+            "name" => "required|max:100",
+            "description" => "required|max:500",
+            "price" => "required|integer|min:0",
+            "stock" => "required|integer|min:0",
+            "size" => "required|in:s,m,l"
+        ]);
+
+
+        $product->update([
+            "name" => $request->name,
+            "description" => $request->description,
+            "price" => $request->price,
+            "stock" => $request->stock,
+            "size" => $request->size,
+        ]);
+
+        return back();
+    }
+
+
+4  we call our functions  in the web.php p.s  pay attention to the variable name
+
+//* get
+
+Route::get("/product/edit/{product}", [ProductController::class, "edit"])->name("products.edit");
+
+Route::put("/product/update/{product}", [ProductController::class, "update"])->name("product.update");
+
+
+----------------------------------------------------------------------------------------
+
+filter:
+-------
+
+    public function filterEmail(Request $request) {
+        
+        $emailPriority = $request->emailPriority;
+        $isRead = $request->isRead;
+        $sortOrder = $request->sortOrder;
+
+        $query = Mail::query();
+
+
+        if($emailPriority != 'all'){
+            $query->where('email_priority', $emailPriority)->get();
+        }
+
+       if($isRead != 'all'){
+            $query->where('is_read', $isRead)->get();
+       }
+
+
+       if($sortOrder == 'oldest'){
+            $query->orderBy('created_at', 'asc')->get();
+       }else{
+            $query->orderBy('created_at', 'desc')->get();
+       }
+        $mails = $query->get();
+
+        return view('Contact.emails', compact('mails'));
+
+
+    }
+
+
+
+<input type="checkbox" @checked($mail->is_read == 1) onchange = 'submit()' name="is_read" value="1"/>        ==> check box is read
+
+
+
+-----------------------------------------------------------------------------------
+
+
+Image CRUD
+create
+1- your blade 
+
+     <form action="/gallery/store" method="post" enctype="multipart/form-data">
+        @csrf
+        <div class="flex flex-col justify-center w-[300px] gap-y-2 p-10">
+            <label class=" font-bold">Choose an image</label>
+            <input type="file" accept="image/jpg, image/png" name="image_name" class="border" placeholder="choose an image" />
+
+            <button class="px-4 py-1.5 bg-green-500 rounded-md">Save Image</button>
+        </div>
+    </form>
+    <hr>
+    <hr>
+
+    @foreach ($images as $image)
+
+        <img src="{{ asset('storage/' . $image->image_name) }}" alt="hhh" class="w-[300px] h-[300px]">
+    @endforeach
+
+
+⚠️  DO NOT FORGET THE enctype="multipart/form-data" attribute
+
+ 2 - your controller 
+
+ public function store(Request $request)
+    {
+        //
+
+        $request->validate([
+            "image_name" => "required|mimes:png,jpg|max:2048"
+        ]);
+
+        //* retrieve image content from request + store the image in public folder (local)
+        $path = $request->file('image_name')->store('gallery', 'public');
+
+        //* store the image path in database
+
+        Gallery::create([
+            "image_name" => $path
+        ]);
+
+        return back();
+    }
+
+
+3- after storing / saving image link the storage DIR with Public DIR 
+
+php artisan storage:link
+ 
+Delete image
+        @foreach ($images as $image)
+           <img src="{{ asset('storage/' . $image->image_name) }}" alt="hhh" class="w-[300px] h-[300px]">
+                <form action="/gallery/destroy/{{ $image->id }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="px-4 py-1.5 bg-red-800 rounded-md text-white">Delete</button>
+                </form>
+
+        @endforeach
+
+
+*controller **
+
+ public function destroy(Gallery $gallery)
+    {
+        //
+
+        $path = $gallery->image_name;
+        //* retrieve the public storage 
+        
+        $storage = Storage::disk('public');
+
+        //* checks if the local storage contains the image to be deleted
+        if ($storage->exists($path)) {
+            //* delete image from local storage
+            $storage->delete($path);
+            //* delete image from database
+            $gallery->delete();
+        }
+
+        return back();
+    }
+ 
+update
+blade
+
+    <form action="/gallery/update/{{ $image->id }}" method="post" enctype="multipart/form-data">
+                        @csrf
+                        @method('PUT')
+                        <div class="flex flex-col justify-center w-[300px] gap-y-2 p-10 relative">
+                            <label class=" font-bold">Choose an image</label>
+
+                            <input type="file" accept="image/jpg, image/png" name="image_name" class="border"
+                                placeholder="choose an image" />
+                            <button class="px-4 py-1.5 bg-green-500 rounded-md">Save Image</button>
+                          </div>
+                        </form>
+
+
+controller
+   public function update(Request $request, Gallery $gallery)
+    {
+        //
+         $request->validate([
+            "image_name" => "required|mimes:png,jpg|max:2048"
+        ]);
+
+        //* retireve relative path of a file
+        $path = storage_path('app/public/' . $gallery->image_name);
+
+        $storage = Storage::disk('public');
+
+        //* check if the path exists in local storage ==> delete/replace
+
+        if(file_exists($path)){
+            $storage->delete($path);
+            //*replace old image with new image in a scpecific storage path
+            $request->image_name->move(storage_path('app/public/gallery/'), $gallery->image_name);
+        }
+       return back();
+    }
+
+
+
+-------------------------------------------------------------------
+
+php artisan route: list 		=> ila khdemt b resource f route w bghit n3ref smit route .
+
 
 
 
