@@ -1,0 +1,99 @@
+UI-UX
+
+
+إلا بغيتي تولي UI/UX Designer, خاصك تعلم:
+
+Design (colors, typography, layout) → UI
+
+كيفاش المستخدم كيتعامل مع l’interface وتفكر معاه → UX
+
+Tools بحال Figma و Adobe XD.
+
+
+
+🎯 مرحلة 1: Fham l’Basics (1 semaine - 2 semaines)
+1. Fham chno huwa UI/UX:
+عاود قرى شنو الفرق بين UI & UX (باش تكون واضحة 100%).
+
+T9ellb 3la vidéos f YouTube:
+
+“شنو هو UI UX؟”
+
+ولا anglophones: "UI vs UX for beginners".
+
+2. Découvre des Examples:
+7ell sites/applications (Instagram, TikTok, Jumia, etc.) ou 9ellb:
+
+Chno zwin (UI)?
+
+Wach sahl tst3mlo (UX)?
+
+🎯 مرحلة 2: Tools & Practice (1 mois)
+1. T3allem Figma (le plus important)
+Figma huwa tool li kaykhdmo bih 90% designers.
+
+9ellb f YouTube: "Figma Tutorial for Beginners".
+
+Bda dir maquettes b simple apps (login page, profile page).
+
+2. Chek des UI Kits (Free Figma Templates)
+9ellb f Google: “Free Figma UI Kits”.
+
+T7llhom f Figma w tdir modifications 3lihom باش t3lm.
+
+3. Défi: Sawb 3 projects:
+Login Page
+
+E-commerce Product Page
+
+Mobile App (Home Screen)
+
+🎯 مرحلة 3: UX Thinking & Real Projects (1 mois - 2 mois)
+1. T3allem UX Research:
+Kifach tsawal utilisateurs (chno kaybghiw, chno kaykrho).
+
+9ellb f YouTube: “How to do UX Research”.
+
+2. Wireframing & Prototyping:
+Bda sawb wireframes (drawings 9bl ma tdir design f Figma).
+
+Dir Prototypes bach tchouf kifach utilisateur ykhdem b site/app dyalk.
+
+3. Défi: Sawb real projects:
+Sawb Design dyal app dial Livraison.
+
+Sawb Website dyal Portfolio dyalek.
+
+📂 Resources khassk t9ra:
+Type	Source
+YouTube	Figma Tutorial (Arabic / English)
+Website	https://dribbble.com (Inspiration)
+Practice	https://www.uplabs.com/ (UI Challenges)
+Reading	"Don’t Make Me Think" (كتاب زوين على UX Thinking)
+
+
+
+✅ Semaine 1 — Défi UI/UX (Basics & Figma)
+🎯 Objectif:
+T9ra w tfhem شنو هو UI/UX (videos + articles).
+
+Tsawb design dyal Login Page simple f Figma.
+
+📝 Taches:
+YouTube Videos (1h par jour):
+
+"شنو هو UI/UX ؟" (en arabe)
+
+"Figma Tutorial for Beginners" (anglais wla arabe).
+
+T7ll Figma w tsawb Login Page (email + password + button).
+
+🚀 Fin Semaine (Friday/Saturday):
+Tsift lia tswira dyal design dyalk باش nshof w n3tik feedback (wach design mzyan, wach khas tsla7 UX).
+
+📅 Plan Dial Défis:
+Semaine	Défi
+1	UI/UX Concepts + Login Page Design (Figma)
+2	Profile Page Design + UX Wireframe
+3	Small App Design (E-commerce Product Page)
+4	UX Research + Simple Prototype (Figma clickable)
