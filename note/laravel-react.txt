@@ -1,0 +1,351 @@
+laravel-react:
+-------------
+
+
+Laravel + React
+1 - install  laravel Application   + react/vite Application
+
+laravel side
+2 -  open  laravel project  and  install api  using
+
+php artisan install:api
+
+
+3 -  based  on  the data  you wanna send   go to the controller   and  return it  as a  json  respone
+
+    public function index()
+    {
+        $products = Product::all();
+        return response()->json($products, 200);
+    }
+
+
+4 - go to route/api.php  to call your function
+
+Route::get("/products" , [ProductController::class , "index"]);
+
+
+5 - serve your  project  ( fl ip  dyalk  )
+
+php artisan serve --host"your ip address"
+
+
+react side
+1 - open your react  project and  install axios
+
+npm i axios
+
+
+2 - now fetch your data  using  the app  url +  /api/ENDPOINT_NAME
+
+ const fetchData = async () => {
+    const response = await axios.get(APP_URL + "/api/products")
+    setProducts(response.data)
+  }
+
+
+add file .env
+
+VITE_API_BASE_URL=http://127.0.0.1:8000
+
+
+
+import url from .env
+
+const url = import.meta.env.VITE_API_BASE_URL;
+
+
+
+
+
+
+
+
+
+
+
+Laravel + React — POST Data (Product Example)
+🐘 Laravel Side
+✅ 1. Create Controller Logic to Handle POST
+
+public function store(Request $request)
+{
+    $request->validate([
+        "name" => "required",
+        "price" => "required",
+        "quantity" => "required",
+    ]);
+
+    Product::create([
+        "name" => $request->name,
+        "price" => $request->price,
+        "quantity" => $request->quantity,
+    ]);
+
+    return response()->json(Product::all(), 200);
+}
+
+
+✅ 2. Define POST Route in routes/api.php
+
+Route::post("/products/store", [ProductController::class, "store"]);
+
+
+⚠️  Make sure your Product model has fillable fields:
+
+⚛️ React Side
+✅ 1. Create State Variables
+
+const [productName, setProductName] = useState("")
+const [productPrice, setProductPrice] = useState("")
+const [qty, setQty] = useState("")
+const [products, setProducts] = useState([])
+
+
+✅ 2. Send POST Request with Axios
+  const storeProduct = async () => {
+
+    const myData = {
+      name: productName,
+      price: price,
+      quantity: qty
+    }
+
+    const response = await axios.post(url + '/api/products/store', myData)
+
+    if(response.status === 200){
+      setProducts(response.data)
+      setProductName('')
+      setPrice('')
+      setQty('')
+    }
+  }
+
+
+
+
+
+
+
+
+
+Update Data (Product Example)
+Laravel Side
+✅ 1. Create Controller Logic to Handle Update
+
+   public function update(Request $request, Product $product)
+    {
+
+        $request->validate([
+            "name" => "required",
+            "price" => "required",
+            "quantity" => "required",
+        ]);
+
+        $product->update([
+            "name" => $request->name,
+            "price" => $request->price,
+            "quantity" => $request->quantity,
+        ]);
+
+        return response()->json(Product::all(), 200);
+    }
+
+
+✅ 2. Define PUT Route in routes/api.php
+
+Route::put("/products/update/{product}", [ProductController::class, "update"]);
+
+
+
+
+
+
+
+
+
+
+
+⚛️ React Side
+✅ 1. Create State Variables
+
+   const [updateName, setUpdateName] = useState("");
+  const [updatePrice, setUpdatePrice] = useState("");
+  const [updateQty, setUpdateQty] = useState("");
+
+
+✅ 2. Send PUT Request with Axios
+  const fetchProduct = async () => {
+    const response = await axios.get(url + `/api/product/edit/${id}`);
+
+    if(response.status === 200){
+        let data = response.data;
+        setUpdateName(data.name)
+        setUpdatePrice(data.price)
+        setUpdateQty(data.quantity)
+    }
+  };
+
+  useEffect(() => {
+    fetchProduct()
+  }, [id])
+
+
+  const updateProduct = async () => {
+    const updatedData = {
+        name: updateName,
+        price: updatePrice,
+        quantity: updateQty
+    }
+    const response = await axios.put(url + `/api/product/update/${id}`, updatedData)
+
+    
+    if(response.status === 200){
+        alert('product updated successfultu')
+        navigate('/product')
+
+    }else{
+        alert('something went wrong')
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Laravel + React (File) + Create
+React side
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+
+const Gallery = () => {
+    const [gallery, setGallery] = useState([]);
+    const url = import.meta.env.VITE_API_URL;
+    const image_url = 'http://127.0.0.1:8000/storage/'
+    const fetchImages = async () => {
+        const response = await axios.get(url + '/api/images');
+        console.log(response.data);
+        
+        if(response.status === 200){
+            let data = response.data
+            setGallery(data)
+        }
+    }
+
+    useEffect(() => {
+      fetchImages()
+    }, [])
+    
+    
+  return (
+    <div>
+        
+        {
+            gallery?.map((e, index) => (
+                <img key={index} src={image_url + e.image}  />
+            ))
+        }
+    </div>
+
+    
+  )
+}
+
+export default Gallery
+
+
+backend side
+public function index()
+    {
+        $images = Gallery::all();
+
+        return response()->json($images, 200);
+    }
+
+    Route::get('/images', [GalleryController::class, 'index']);
+ 
+Laravel + React (File) + Post
+React side
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+
+const Gallery = () => {
+   
+    const [file, setFile] = useState(null)
+    const url = import.meta.env.VITE_API_URL;
+  
+  
+    
+    const storeImage = async (e) => {
+        e.preventDefault()
+        const formData = new FormData();
+        formData.append('image', file)
+        const response = await axios.post(url + '/api/images/store', formData, {
+            headers: {
+                "Content-Type": "multipart/form-data",
+            }
+        })
+
+        if(response.status === 200){
+            const data = response.data
+            setGallery(data)
+            alert('image added ')
+        }else{
+            alert('something went wrong')
+        }
+    }
+  return (
+    <div>
+        <form action="" onSubmit={storeImage} className='p-10 flex gap-x-3 items-center'>
+            <input type="file" placeholder='insert an image' className='border px-2 py-1' onChange={(e) => setFile(e.target.files[0])}/>
+            <button type='submit' className='px-4 py-1.5 bg-green-300 rounded-md '>Submit</button>
+        </form>
+    </div>
+
+    
+  )
+}
+
+export default Gallery
+
+
+backend side
+ public function store(Request $request)
+    {
+        $request->validate([
+            "image" => "required"
+        ]);
+
+        $path = $request->file('image')->store('gallery', 'public');
+
+        Gallery::create([
+            "image" => $path
+        ]);
+
+        return response()->json(Gallery::all(), 200);
+    }
+    
+    Route::post('/images/store', [GalleryController::class, 'store']);
+
+
+
+
+
+
+
+
+
+
+
+
+

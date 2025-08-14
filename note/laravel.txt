@@ -1937,19 +1937,170 @@ p.s if you have do not forget the
     }
 
 
+With Gmail
+----------
+
+
+MAIL_MAILER=smtp
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=your_email@gmail.com
+MAIL_PASSWORD=your_app_password
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=your_email@gmail.com
+MAIL_FROM_NAME="${APP_NAME}"
+
+
+
+
+
+-----------------------------------------------------------------------------------------
+
+FullCalendar
+------------
+
+1 documentation : https://fullcalendar.io/docs#toc
+
+
+CDN :       https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.18/index.global.min.js'></script>
+
+
+2 - in your blade 
+<div id='calendar'></div>
+
+
+3- in your controller
+public function create()
+    {
+        $events = Event::all();
+        $events = $events->map(function ($event) {
+            return [
+                "owner" => $event->user_id,
+                "start" => $event->start,
+                "end" => $event->end,
+                "backgroundColor" =>  'red',
+                "title" => "test",
+            ];
+        });
+        return response()->json([
+            "events" => $events
+        ]);
+        
+    }
+
+   public function store(Request $request)
+    {
+
+        $request->validate([
+            "start" => "required",
+            "end" => "required"
+        ]);
+
+
+        Event::create([
+            "start" => $request->start,
+            "end" => $request->end,
+            "user_id" => Auth::user()->id
+
+        ]);
+
+        return back();
+    }
 
 
 
 
 
 
+-----------------------------------------------------------------------------
+
+Stripe Payment
+1    install stripe 
+
+composer require stripe/stripe-php
 
 
 
 
+2 - go to https://dashboard.stripe.com/ create an account
+
+next :   go to developers /  api key  and  take your public & secret key
 
 
+3 - in your .env file  add  your stripe key s 
 
+STRIPE_KEY=pk_*******************
+STRIPE_SECRET=sk_************************
+
+
+4 - in your config/stripe.php add 
+
+<?php
+
+return [
+    'pk' => env('STRIPE_KEY'),
+    'sk' => env('STRIPE_SECRET'),
+];
+
+
+5 - in your controller    you have to
+ import your key from stripe.php  (stripe.php import keys from env as well )
+
+  public function checkout()
+    {
+        Stripe::setApiKey(config('stripe.sk'));
+        
+        $session = Session::create([
+            'line_items'  => [
+                [
+                    'price_data' => [
+                        'currency'     => 'usd',
+                        'product_data' => [
+                            "name" => "spotify subscription",
+                            "description" => "to listent to our music please pay for that"
+                        ],
+                        'unit_amount'  => 100000,
+                    ],
+                    'quantity'   => 3,
+                ],
+
+            ],
+            'mode'        => 'payment', // the mode  of payment
+            'success_url' => route('dashboard'), // route when success 
+            'cancel_url'  => route('stripe.payement'), // route when  failed or canceled
+        ]);
+
+        return redirect()->away($session->url);
+    }
+
+
+=============     ================     ===============    ================
+
+
+7 -  testing with fake card u can have one from:
+
+https://docs.stripe.com/testing
+
+
+---------------------------------------------------------------------
+
+test key:
+---------
+
+Route::get('/test-env', function () {
+    return response()->json([
+        'APP_NAME' => env('APP_NAME'),
+        'STRIPE_SECRET' => env('STRIPE_SECRET'),
+    ]);
+});
+
+
+dd(env('STRIPE_SECRET'));
+dd([
+    'env' => env('STRIPE_SECRET'),
+    'config' => config('stripe.sk'),
+]);
 
 
 
