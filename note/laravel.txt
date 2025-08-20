@@ -181,25 +181,16 @@ public function index(){
 ilaa bghit ndir lchi folder f git hub git clone:
 
 
-
-npm i
-
-composer i
-
-
-
-2- duplique enve , edite file name , decomments mn 22 > 26
-
-
-
-3- php artisan key:generate
-
-
-
-4- php artisan migrate
-
-5- php artisan migrate:refresh --seed
-
+1- sir discord cliquer 3la link w sir code w dir copier url
+2- dkhol vs code sir l dossier fin ghathotto w dir git clone
+3- cd smiya projet
+4- npm i
+5- composer i
+6- dir copier l file .env.exemple w dir coler hdah w msseh . exemple kheli ghir .env
+7- heyed commentaire mn ster 24/25/26/27/28 
+8- dir php artisan key:generate
+9- php artisan migrate --seed
+10- composer run dev
 
 
 
@@ -1895,12 +1886,13 @@ https://github.com/mailhog/MailHog/releases
 and adjust the .env file to 
 
 MAIL_MAILER=smtp
-MAIL_HOST=localhost
-MAIL_PORT=1025
-MAIL_USERNAME=null
-MAIL_PASSWORD=null
-MAIL_ENCRYPTION=null
-MAIL_FROM_ADDRESS="hello@example.com"
+MAIL_SCHEME=null
+MAIL_HOST=smtp.gmail.com
+MAIL_PORT=587
+MAIL_USERNAME=aymenandaloussi69@gmail.com
+MAIL_PASSWORD='cofb glwj wxjc vyfu'
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS="aymenandaloussi69@gmail.com"
 MAIL_FROM_NAME="${APP_NAME}"
 
 2 .create a mailer using 
