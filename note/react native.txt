@@ -4,3 +4,145 @@ react native:
 ipconfigue :  IPv4 Address. . . . . . . . . . . : 192.168.100.121
 
 php artisan serv --host 192.168.100.121
+
+npm start : serve
+npm start -c : serve & clear cache
+
+
+1. View = div = container principal
+-------------------------------------
+<View className="p-4 bg-white rounded-lg shadow">
+  <Text>Content hna</Text>
+</View>
+
+2. Text = p/span/h1-h6 = kol text
+-------------------------------------
+<Text className="text-xl font-bold text-blue-600">Title</Text>
+<Text className="text-base text-gray-700">Paragraph</Text>
+
+3. TouchableOpacity = button = press effect
+-------------------------------------
+<TouchableOpacity className="bg-blue-500 p-4 rounded-lg" onPress={() => alert('clicked')}>
+  <Text className="text-white font-bold">Click me</Text>
+</TouchableOpacity>
+
+4. TouchableHighlight = button = highlight
+-------------------------------------
+<TouchableHighlight className="bg-green-500 p-4 rounded-lg" onPress={() => {}}>
+  <Text className="text-white">Highlight button</Text>
+</TouchableHighlight>
+
+5. Pressable = button moderne
+-------------------------------------
+<Pressable className="bg-purple-500 p-4 rounded-lg" onPress={() => {}}>
+  <Text className="text-white">Pressable</Text>
+</Pressable>
+
+6. TextInput = input text
+-------------------------------------
+<TextInput 
+  className="border p-3 rounded-lg mb-4" 
+  placeholder="Ktb hna"
+  value={text}
+  onChangeText={setText}
+/>
+
+7. Switch = checkbox
+-------------------------------------
+<Switch
+  trackColor={{false: '#767577', true: '#81b0ff'}}
+  thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+  value={isEnabled}
+  onValueChange={setEnabled}
+/>
+
+8. Image = img
+-------------------------------------
+<Image 
+  className="w-20 h-20 rounded-full" 
+  source={require('./logo.png')} 
+/>
+<Image source={{uri: 'https://example.com/img.jpg'}} className="w-full h-40"/>
+
+9. ScrollView = div scroll
+-------------------------------------
+<ScrollView className="flex-1">
+  <View className="h-[2000px] p-4">
+    <Text>Content long...</Text>
+  </View>
+</ScrollView>
+
+10. FlatList = ul/li optimisée
+-------------------------------------
+<FlatList
+  data={items}
+  renderItem={({item}) => <Text className="p-4">{item.name}</Text>}
+  keyExtractor={item => item.id}
+/>
+
+11. SafeAreaView = body safe
+-------------------------------------
+<SafeAreaView className="flex-1 bg-white">
+  <View className="p-4">
+    <Text>Pas de notch problem</Text>
+  </View>
+</SafeAreaView>
+
+12. ActivityIndicator = spinner
+-------------------------------------
+<ActivityIndicator size="large" color="#0000ff" />
+
+13. Modal = dialog popup
+-------------------------------------
+<Modal visible={modalVisible} animationType="slide">
+  <View className="flex-1 p-4">
+    <Text>Popup content</Text>
+  </View>
+</Modal>
+
+14. Alert.alert() = alert()
+-------------------------------------
+Alert.alert('Title', 'Message', [
+  {text: 'Cancel', style: 'cancel'},
+  {text: 'OK', onPress: () => console.log('OK')}
+]);
+
+17. ImageBackground = background image
+-------------------------------------
+<ImageBackground source={bgImage} className="w-full h-40">
+  <Text className="text-white p-4">Content فوق image</Text>
+</ImageBackground>
+
+18. RefreshControl = pull-to-refresh
+-------------------------------------
+<ScrollView refreshControl={<RefreshControl refreshing={refreshing} onRefresh={onRefresh} />}>
+  Content
+</ScrollView>
+
+19. Slider = input range (continued)
+-------------------------------------
+<Slider
+  style={{width: '100%', height: 40}}
+  minimumValue={0}
+  maximumValue={100}
+  value={sliderValue}
+  onValueChange={setSliderValue}
+  minimumTrackTintColor="#81b0ff"
+  maximumTrackTintColor="#d3d3d3"
+/>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
