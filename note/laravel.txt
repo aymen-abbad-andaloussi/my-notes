@@ -1,3 +1,12 @@
+Route::resource('products', ProductController::class);
+
+php artisan route:list
+php artisan route:list | grep products
+
+had tanya hssen kesseffi ghir route li fihom product
+
+bach njme3 f route get w post w put w destroy
+
 composer ceate-project laravel/laravel .
 composer global require laravel/installer
 
@@ -193,6 +202,11 @@ ilaa bghit ndir lchi folder f git hub git clone:
 10- composer run dev
 
 
+
+ila mabghawch ybano tsawer nmseeh dossier storage w ndir link
+
+manager@gmail.com
+php artisan storage:link
 
 
 ------------------------------------------------------------
@@ -1005,7 +1019,7 @@ public function show(Post $post)
 
 ​
 
-2 - create web route ⚠️ respect the naming convention 
+2 - create web route⚠️ respect the naming convention 
 
 //\\\* to show details of a specific element
 
