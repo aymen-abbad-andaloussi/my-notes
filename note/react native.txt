@@ -1,7 +1,7 @@
 react native:
 ------------
 
-ipconfigue :  IPv4 Address. . . . . . . . . . . : 192.168.100.121
+ipconfig :  IPv4 Address. . . . . . . . . . . : 192.168.100.121
 
 php artisan serv --host 192.168.100.121
 

@@ -82,6 +82,7 @@ npm i react-router-dom
 npm install @tailwindcss/vite --force 
 npm install @tailwindcss/vite --legacy-peer-deps		: ila 3tani error dyal version khassni ndir hada
 
+root : is the email or user to connect phpMyAdmin wordpress
 
 
 
